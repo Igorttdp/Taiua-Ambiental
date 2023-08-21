@@ -3,6 +3,7 @@ import styled from "styled-components";
 import Button from "./Button";
 import { ButtonVariant } from "@/interfaces/Enums";
 import { Fira_Sans } from "next/font/google";
+import { IRoomDataProps } from "@/interfaces/RoomsData";
 
 const RoomCardContainer = styled.article`
   width: 32rem;
@@ -30,8 +31,6 @@ const RoomCardContainer = styled.article`
   transition: all 0.3s;
 
   > img {
-    width: 100%;
-    height: auto;
     border-radius: 1.2rem 1.2rem 0 0;
     object-fit: cover;
 
@@ -84,37 +83,126 @@ const fira = Fira_Sans({
 });
 
 const RoomCard = () => {
+  const RoomsData: IRoomDataProps[] = [
+    {
+      title: "Barraca Equipada",
+      subtitle: "Barraca equipada individual, tripla e quadrupla",
+      imgSrc:
+        "https://lh3.googleusercontent.com/pw/AIL4fc_1Be2DEyXVX8j_VBtrvZdFpGJAQ6_Q25aSCCWszQBDYF2u2gUedlcEcCYaQdBuGVYLMen5gG6kqMhFU2t5PdnedmxRZQapDY4HvLAHf0z4RieuOio4_2UMv4SOeXTqip85fRKoOYLiKFo6xjThQh_f=w1255-h941-s-no",
+      blurData:
+        "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVR42mPMysvfAwAElgIFWqQ0JQAAAABJRU5ErkJggg==",
+    },
+    {
+      title: "Área de Camping",
+      subtitle: "Traga sua barraca",
+      imgSrc:
+        "https://lh3.googleusercontent.com/pw/AIL4fc-tRc_VROP0As-E-lHHzdDPp-vbyymGkonHnUTq-1wrwKTsvuug3-M-l3sIfXrULzAxt0sDvqrTYrmbjyA4lVdY3jdvc9nX6jPPMORVSDHeMu1ez4H7xDAPdVKuE8s2QwR4cU7XEzA58LYEHgoG5AeS=w1412-h941-s-no",
+      blurData:
+        "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVR42mN00jPZAwACwAFiKmKPogAAAABJRU5ErkJggg==",
+    },
+    {
+      title: "Suíte Jatobá",
+      subtitle: "Até 2 pessoas",
+      imgSrc:
+        "https://lh3.googleusercontent.com/pw/AIL4fc90e4uTYTFpETrBCEjyuvh9V3y6hKAqfZy-lP611E18o0glpPbADF3nSdvms5Z-XkYlqi6IdKXAJBQS1YQ6qtTkrrMS7jJFryrCRbKKrZR7MTW2RLt3_cFrAn95b3KNokn-lUTHL0g2GPIeUPe-Otah=w1411-h941-s-no",
+      blurData:
+        "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVR42mOs/P17DwAHkQMtarjEIQAAAABJRU5ErkJggg==",
+    },
+    {
+      title: "Suíte Baru",
+      subtitle: "Até 2 pessoas",
+      imgSrc:
+        "https://lh3.googleusercontent.com/pw/AIL4fc8KTrITyRG2Vk-ocwcUCb0zOt7M6dP8_ZLRkSrf5NxTkHpGdyGUYF9VYVd2AAYo9JSsnCXYKgJpCCSTY9oXKIE0c0Nmjy_RxKlCkJgcOZnN51AE-JKxcSNDYpwzvw-BiRfmrsT699hSdah3kYj8B27h=w1404-h941-s-no",
+      blurData:
+        "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVR42mPcu2neHgAHDALL9WjlJAAAAABJRU5ErkJggg==",
+    },
+    {
+      title: "Suíte Mangaba",
+      subtitle: "Até 4 pessoa",
+      imgSrc:
+        "https://lh3.googleusercontent.com/pw/AIL4fc9eGGwUMLWfpapcoHz74JJO_iSsFQH8J5i7GGnzAGihcIAFWqdxNgmtXQ8po8hmJCx4JOCaTc2rvgXRlhaHbc5NPfgdew_fMCuX6umROm51dyXAj3ZSry8okwZ-3K8Md6EVxi3tnOo7CjHnuVTYjELz=w1407-h941-s-no",
+      blurData:
+        "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVR42mN8ualxDwAHggLa8BLkhQAAAABJRU5ErkJggg==",
+    },
+    {
+      title: "Suíte Pequi",
+      subtitle: "Até 3 pessoas",
+      imgSrc:
+        "https://lh3.googleusercontent.com/pw/AIL4fc8yxWhE_W-gHO41iwLrqZuf7Sa0HXTTpJ536g4NW87CwVFUynZnG6xh-UwCmMjp5vien-12Mmo_iL9pYkkz4I6pBOOtKpubq70WVauO6wPtEFroAHJvFCb7Og3HSzJPH1S6mbYOcugK90SZzsCju61O=w1412-h941-s-no",
+      blurData:
+        "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVR42mO8MqVwDwAGtAKXDUKpJwAAAABJRU5ErkJggg==",
+    },
+    {
+      title: "Suíte Pato Mergulhão",
+      subtitle: "Até 3 pessoas",
+      imgSrc:
+        "https://lh3.googleusercontent.com/pw/AIL4fc9OQ8tS3dYn0mxVxKhzsHI42rxAynyUmybsfGe__JsPG1mgo0QBvS2w0SEf0SXywo9TAQ9R6IikzyD_t9JA8CJnsqMl6YUw-cUK1PvzNTZmGNYupE2Ks86AcGgRvVsouYCmG0OtAq4V-Kqeq93Km1XB=w1412-h941-s-no",
+      blurData:
+        "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVR42mNcuWTBHgAGlgKrMoIGTgAAAABJRU5ErkJggg==",
+    },
+    // {
+    //   title: "",
+    //   subtitle: "",
+    //   imgSrc: ""
+    // },
+    // {
+    //   title: "",
+    //   subtitle: "",
+    //   imgSrc: ""
+    // },
+    // {
+    //   title: "",
+    //   subtitle: "",
+    //   imgSrc: ""
+    // },
+    // {
+    //   title: "",
+    //   subtitle: "",
+    //   imgSrc: ""
+    // }
+  ];
+
+  const redirectToLink = () => {
+    window.open("https://taiuaambiental.motordereservas.com.br/novareserva");
+  };
+
   return (
-    <RoomCardContainer>
-      <Image
-        src="https://lh3.googleusercontent.com/pw/AIL4fc-AbijTtoC4Y9XbqxlQiKZGohb-0N0Xry1Cub2_UrdwwRV7xviWN-pr1O2WCiK5mZKC0q-YDT3PSt_MhEz1UYqBh9X-KL9Gw6kQDY262V2y1MbOafd5X9uiQXOk4gqMlIthmGP9ew1PzwGKhxjTAMKe=w1404-h941-s-no"
-        width={320}
-        height={200}
-        alt="Quarto"
-        draggable={false}
-        priority
-      />
+    <>
+      {RoomsData.map((el, i) => (
+        <RoomCardContainer key={i}>
+          <Image
+            src={el.imgSrc}
+            width={320}
+            height={200}
+            alt="Quarto"
+            draggable={false}
+            placeholder="blur"
+            blurDataURL={el.blurData}
+          />
 
-      <div>
-        <h3>QUARTO X</h3>
-        <span>Até X Pessoas</span>
+          <div>
+            <h3>{el.title}</h3>
+            <span>{el.subtitle}</span>
 
-        <div>
-          <Button
-            className={fira.className}
-            $variant={ButtonVariant.OUTLINE_BLUE_TEXT}
-          >
-            Reservar
-          </Button>
-          <Button
-            className={fira.className}
-            $variant={ButtonVariant.OUTLINE_GREEN_TEXT}
-          >
-            Ver mais+
-          </Button>
-        </div>
-      </div>
-    </RoomCardContainer>
+            <div>
+              <Button
+                className={fira.className}
+                $variant={ButtonVariant.OUTLINE_BLUE_TEXT}
+                onClick={redirectToLink}
+              >
+                Reservar
+              </Button>
+              <Button
+                className={fira.className}
+                $variant={ButtonVariant.OUTLINE_GREEN_TEXT}
+              >
+                Ver mais+
+              </Button>
+            </div>
+          </div>
+        </RoomCardContainer>
+      ))}
+    </>
   );
 };
 
