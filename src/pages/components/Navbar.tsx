@@ -17,7 +17,7 @@ import Drawer from "@mui/material/Drawer";
 
 const NavbarContainer = styled.nav`
   width: 100%;
-  background: rgba(255, 255, 255, 0.15);
+  background: rgba(139, 139, 139, 0.15);
   backdrop-filter: blur(10px);
   -webkit-backdrop-filter: blur(10px);
   padding: 8px 4vw;
@@ -31,7 +31,7 @@ const NavbarContainer = styled.nav`
   justify-content: space-between;
   gap: 1.4rem;
 
-  @media (min-width: 1025px) {
+  @media (min-width: 1200px) {
     > div {
       > button#Menu {
         display: none;
@@ -49,6 +49,12 @@ const NavbarContainer = styled.nav`
   > div {
     > button#Menu {
       margin-left: 2rem;
+    }
+
+    @media (max-width: 400px) {
+      > button {
+        padding: 0.8rem 2rem;
+      }
     }
   }
 
@@ -69,6 +75,23 @@ const NavbarContainer = styled.nav`
       font-size: 2rem;
       font-weight: 500;
       text-shadow: #000 1px -1px, #000 -1px 1px, #000 1px 1px, #000 -1px -1px;
+      position: relative;
+
+      &::after {
+        content: "";
+        position: absolute;
+        width: 0%;
+        height: 2px;
+        display: block;
+        transition: all 0.3s ease;
+        bottom: -0.5rem;
+      }
+
+      &:hover::after {
+        width: 100%;
+        height: 1px;
+        background-color: #fff;
+      }
     }
   }
 `;
@@ -82,59 +105,75 @@ const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
 
   const drawerHandler = () => {
-    setIsOpen(!!isOpen);
-  }
+    setIsOpen(!isOpen);
+  };
+
+  const redirectToLink = () => {
+    window.open("https://taiuaambiental.motordereservas.com.br/novareserva");
+  };
 
   return (
     <NavbarContainer className={fira.className}>
-      <Image
-        src={Logo}
-        width={50}
-        height={50}
-        alt="Taiuá Ambiental"
-        placeholder="blur"
-        style={{ borderRadius: "100%" }}
-        draggable={false}
-      />
+      <a href="#">
+        <Image
+          src={Logo}
+          width={50}
+          height={50}
+          alt="Taiuá Ambiental"
+          placeholder="blur"
+          style={{ borderRadius: "100%" }}
+          draggable={false}
+        />
+      </a>
       <ul>
         <li>
-          <a href="">Nossa Pousada</a>
+          <a href="#Presentation">Nossa Pousada</a>
         </li>
         <li>
-          <a href="">Acomodações</a>
+          <a href="#Accommodations">Acomodações</a>
         </li>
         <li>
-          <a href="">Espaço & Diferenciais</a>
+          <a href="#Attributes">O que Ofereçemos</a>
         </li>
         <li>
-          <a href="">Missão & Valores</a>
+          <a href="#Virtues">Missão & Valores</a>
         </li>
         <li>
-          <a href="">Venha nos Visitar</a>
+          <a href="#VisitUs">Venha nos Visitar</a>
         </li>
       </ul>
 
       <div>
-        <Button>Reservar</Button>
+        <Button onClick={redirectToLink}>Reservar</Button>
         <Button id="Menu" onClick={drawerHandler}>
           Menu
         </Button>
-        <Drawer anchor="right" open={isOpen} onClose={drawerHandler}>
+        <Drawer anchor={"right"} open={isOpen} onClose={drawerHandler}>
           <ul>
             <li>
-              <a href="">Nossa Pousada</a>
+              <a onClick={drawerHandler} href="#Presentation">
+                Nossa Pousada
+              </a>
             </li>
             <li>
-              <a href="">Acomodações</a>
+              <a onClick={drawerHandler} href="#Accommodations">
+                Acomodações
+              </a>
             </li>
             <li>
-              <a href="">Espaço & Diferenciais</a>
+              <a onClick={drawerHandler} href="#Attributes">
+                O que Ofereçemos
+              </a>
             </li>
             <li>
-              <a href="">Missão & Valores</a>
+              <a onClick={drawerHandler} href="#Virtues">
+                Missão & Valores
+              </a>
             </li>
             <li>
-              <a href="">Venha nos Visitar</a>
+              <a onClick={drawerHandler} href="#VisitUs">
+                Venha nos Visitar
+              </a>
             </li>
           </ul>
         </Drawer>
