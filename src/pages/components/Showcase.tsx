@@ -11,9 +11,18 @@ const Showcase = styled.div`
   justify-content: center;
   gap: 4rem;
 
-  a > img {
-    max-width: 30.9rem;
-    max-height: 30.9rem;
+  h1 {
+    text-align: center;
+
+    a > img {
+      max-width: 30.9rem;
+      max-height: 30.9rem;
+
+      @media (max-width: 840px) {
+        width: 75%;
+        height: fit-content;
+      }
+    }
   }
 
   > span {
