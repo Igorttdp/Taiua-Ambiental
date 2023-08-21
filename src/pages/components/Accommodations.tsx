@@ -6,6 +6,10 @@ const Accommodations = styled.div`
   padding: 0 5rem 3.6rem;
   text-align: center;
 
+  @media (max-width: 375px) {
+    padding: 0 2.4rem 3.6rem;
+  }
+  
   @media (max-width: 320px) {
     padding: 0 2rem 3.6rem;
   }
