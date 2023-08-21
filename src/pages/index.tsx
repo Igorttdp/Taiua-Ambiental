@@ -79,6 +79,8 @@ export default function Home() {
               <a href="#" draggable={false}>
                 <Image
                   src={Logo}
+                  width={309}
+                  height={309}
                   alt="Taiuá Ambiental"
                   placeholder="blur"
                   style={{ borderRadius: "100%" }}
