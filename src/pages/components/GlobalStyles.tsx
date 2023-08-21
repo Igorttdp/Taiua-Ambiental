@@ -24,6 +24,9 @@ const GlobalStyle = createGlobalStyle`
         box-sizing: border-box;
     }
 
+    html {
+        scroll-behavior: smooth;
+    }
 
     button {
         background: transparent;
@@ -44,6 +47,45 @@ const GlobalStyle = createGlobalStyle`
     a {
         text-decoration: none;
         color: var(--white);
+    }
+
+    .MuiDrawer-paper {
+        background: rgba(255, 255, 255, 0.5);
+        backdrop-filter: blur(10px);
+        -webkit-backdrop-filter: blur(10px);
+
+        > ul {
+            height: 100%;
+            font-size: 2rem;
+            padding: 3rem 1rem;
+            padding-left: 4rem;
+            color: #fff;
+
+            > li {
+                width: fit-content;
+                font-weight: 500;
+                text-shadow: #000 1px -1px, #000 -1px 1px, #000 1px 1px, #000 -1px -1px;
+                padding: 2rem 0;
+                list-style: disc;
+                position: relative;
+
+                &::after {
+                    content: "";
+                    position: absolute;
+                    width: 0%;
+                    height: 3px;
+                    display: block;
+                    transition: all 0.3s ease;
+                    bottom: 25%;
+                }
+
+                &:hover::after {
+                    width: 100%;
+                    height: 1px;
+                    background-color: #fff;
+                }
+            }
+        }
     }
 `;
 
