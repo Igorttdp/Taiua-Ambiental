@@ -8,8 +8,6 @@ import Logo from "../assets/Logo.png";
 import Background from "../assets/background.jpg";
 import ArrowDown from "../assets/arrowDown.svg";
 import Folhas from "../assets/folhas.png";
-import Check from "../assets/check.svg";
-import ImageBtn from "../assets/imagebtn.svg";
 import LogoFlat from "../assets/logo-flat.png";
 import Chapada1 from "../assets/chapada1.png";
 import Chapada2 from "../assets/chapada2.png";
@@ -40,6 +38,7 @@ import { ButtonVariant } from "@/interfaces/Enums";
 import VisitUsContainer from "./components/VisitUsContainer";
 import Footer from "./components/Footer";
 import Navbar from "./components/Navbar";
+import AttributeCards from "./components/AttributeCard";
 
 const josefin = Josefin_Sans({
   subsets: ["latin"],
@@ -52,6 +51,10 @@ const fira = Fira_Sans({
 });
 
 export default function Home() {
+  const redirectToLink = () => {
+    window.open("https://taiuaambiental.motordereservas.com.br/novareserva");
+  };
+
   return (
     <>
       <Head>
@@ -90,6 +93,7 @@ export default function Home() {
           </Showcase>
         </Container>
         <Container
+          id="Presentation"
           $background="linear-gradient(180deg, rgba(61, 84, 48, 0.03) 8.85%, #47702F 27.08%, #FFF 100%)"
           $transform={"translateY(-30vh)"}
         >
@@ -105,6 +109,7 @@ export default function Home() {
                 <Button
                   $variant={ButtonVariant.OUTLINE_BLUE_TEXT}
                   className={fira.className}
+                  onClick={redirectToLink}
                 >
                   Reservar
                 </Button>
@@ -136,7 +141,7 @@ export default function Home() {
             </div>
           </Presentation>
         </Container>
-        <Container>
+        <Container id="Accommodations">
           <Accommodations>
             {/* 1⁰ barraca equipada
           2⁰ área de camping
@@ -153,173 +158,24 @@ export default function Home() {
             <h2>Acomodações</h2>
             <div>
               <RoomCards />
-              <RoomCards />
-              <RoomCards />
-              <RoomCards />
-              <RoomCards />
-              <RoomCards />
-              <RoomCards />
-              <RoomCards />
-              <RoomCards />
             </div>
           </Accommodations>
         </Container>
         <Container
+          id="Attributes"
           $background="linear-gradient(180deg, #fff 0%, #cce6f5 100%)"
           style={{ minHeight: "fit-content" }}
         >
           <DifferentialsContainer>
-            <h2>Nosso Espaço e Diferenciais</h2>
+            <h2>O que ofereçemos</h2>
 
             <div>
-              <AttributeCard>
-                <div>
-                  <Image
-                    width={37}
-                    height={37}
-                    src={Check}
-                    alt="ícone de checado"
-                  />
-                  <h3>Título qualquer</h3>
-                </div>
-                <p>
-                  Uma área ampla e aconchegante. Com camas, pufes, redes, Longe
-                  e muito mais.
-                </p>
-                <button className={fira.className}>
-                  <Image
-                    width={26}
-                    height={26}
-                    src={ImageBtn}
-                    alt="ícone de imagem"
-                  />
-                  <span>Ver Imagens</span>
-                </button>
-              </AttributeCard>
-              <AttributeCard>
-                <div>
-                  <Image
-                    width={37}
-                    height={37}
-                    src={Check}
-                    alt="ícone de checado"
-                  />
-                  <h3>Título qualquer</h3>
-                </div>
-                <p>
-                  Uma área ampla e aconchegante. Com camas, pufes, redes, Longe
-                  e muito mais.
-                </p>
-                <button className={fira.className}>
-                  <Image
-                    width={26}
-                    height={26}
-                    src={ImageBtn}
-                    alt="ícone de imagem"
-                  />
-                  <span>Ver Imagens</span>
-                </button>
-              </AttributeCard>
-              <AttributeCard>
-                <div>
-                  <Image
-                    width={37}
-                    height={37}
-                    src={Check}
-                    alt="ícone de checado"
-                  />
-                  <h3>Título qualquer</h3>
-                </div>
-                <p>
-                  Uma área ampla e aconchegante. Com camas, pufes, redes, Longe
-                  e muito mais.
-                </p>
-                <button className={fira.className}>
-                  <Image
-                    width={26}
-                    height={26}
-                    src={ImageBtn}
-                    alt="ícone de imagem"
-                  />
-                  <span>Ver Imagens</span>
-                </button>
-              </AttributeCard>
-              <AttributeCard>
-                <div>
-                  <Image
-                    width={37}
-                    height={37}
-                    src={Check}
-                    alt="ícone de checado"
-                  />
-                  <h3>Título qualquer</h3>
-                </div>
-                <p>
-                  Uma área ampla e aconchegante. Com camas, pufes, redes, Longe
-                  e muito mais.
-                </p>
-                <button className={fira.className}>
-                  <Image
-                    width={26}
-                    height={26}
-                    src={ImageBtn}
-                    alt="ícone de imagem"
-                  />
-                  <span>Ver Imagens</span>
-                </button>
-              </AttributeCard>
-              <AttributeCard>
-                <div>
-                  <Image
-                    width={37}
-                    height={37}
-                    src={Check}
-                    alt="ícone de checado"
-                  />
-                  <h3>Título qualquer</h3>
-                </div>
-                <p>
-                  Uma área ampla e aconchegante. Com camas, pufes, redes, Longe
-                  e muito mais.
-                </p>
-                <button className={fira.className}>
-                  <Image
-                    width={26}
-                    height={26}
-                    src={ImageBtn}
-                    alt="ícone de imagem"
-                  />
-                  <span>Ver Imagens</span>
-                </button>
-              </AttributeCard>
-              <AttributeCard>
-                <div>
-                  <Image
-                    width={37}
-                    height={37}
-                    src={Check}
-                    alt="ícone de checado"
-                  />
-                  <h3>Título qualquer</h3>
-                </div>
-                <p>
-                  Uma área ampla e aconchegante. Com camas, pufes, redes, Longe
-                  e muito mais.
-                </p>
-                <button className={fira.className}>
-                  <Image
-                    width={26}
-                    height={26}
-                    src={ImageBtn}
-                    alt="ícone de imagem"
-                  />
-                  <span>Ver Imagens</span>
-                </button>
-              </AttributeCard>
+              <AttributeCards />
             </div>
           </DifferentialsContainer>
         </Container>
         <Container
+          id="Virtues"
           $background="linear-gradient(180deg, #cce6f5 0%, #4da5dd 100%)"
           style={{ minHeight: "fit-content" }}
         >
@@ -348,6 +204,7 @@ export default function Home() {
           </VirtuesContainer>
         </Container>
         <Container
+          id="VisitUs"
           $background="linear-gradient(180deg, #4da5dd 0%, #226fa0 100%)"
           style={{ minHeight: "fit-content" }}
         >
