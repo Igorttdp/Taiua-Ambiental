@@ -171,6 +171,11 @@ const RoomCardContainer = styled.article`
         padding: 8px 2rem;
         font-size: 1.5rem;
       }
+
+      > div > button {
+        padding: 8px 2rem;
+        font-size: 1.5rem;
+      }
     }
   }
 `;
@@ -280,26 +285,6 @@ const RoomCard = () => {
         images: [pm1, pm2, pm3, pm4, pm5, pm6, pm7, pm8],
       },
     },
-    // {
-    //   title: "",
-    //   subtitle: "",
-    //   imgSrc: ""
-    // },
-    // {
-    //   title: "",
-    //   subtitle: "",
-    //   imgSrc: ""
-    // },
-    // {
-    //   title: "",
-    //   subtitle: "",
-    //   imgSrc: ""
-    // },
-    // {
-    //   title: "",
-    //   subtitle: "",
-    //   imgSrc: ""
-    // }
   ];
 
   const redirectToLink = () => {
@@ -337,16 +322,14 @@ const RoomCard = () => {
                 title={el.title}
                 subtitle={el.subtitle}
                 font={fira.className}
-                triggerComponent={(handleClickOpen: () => void) => (
-                  <Button
-                    className={fira.className}
-                    $variant={ButtonVariant.OUTLINE_GREEN_TEXT}
-                    onClick={handleClickOpen}
-                  >
-                    Ver mais+
-                  </Button>
-                )}
-              />
+              >
+                <Button
+                  className={fira.className}
+                  $variant={ButtonVariant.OUTLINE_GREEN_TEXT}
+                >
+                  Ver mais+
+                </Button>
+              </CustomDialog>
             </div>
           </div>
         </RoomCardContainer>
