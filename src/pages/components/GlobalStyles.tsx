@@ -1,4 +1,5 @@
 import { createGlobalStyle } from "styled-components";
+import "@coreui/coreui/dist/css/coreui.min.css";
 
 const GlobalStyle = createGlobalStyle`
     :root {
@@ -32,9 +33,7 @@ const GlobalStyle = createGlobalStyle`
         background: transparent;
         cursor: pointer;
         transition: all .3s;
-    }
-
-    button, input {
+        line-height: unset;
         outline: 0;
         border: none;
     }
