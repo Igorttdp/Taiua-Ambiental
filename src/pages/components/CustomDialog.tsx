@@ -11,7 +11,7 @@ import { ButtonVariant } from "@/interfaces/Enums";
 import close from "../../assets/close.svg";
 
 interface CustomDialogProps {
-  triggerComponent: (handleClickOpen: () => void) => ReactNode;
+  children: ReactNode;
   albumTitle?: string;
   albumImages: StaticImageData[];
   title: string;
@@ -120,7 +120,7 @@ const DialogActionsContainer = styled(DialogActions)`
 `;
 
 const CustomDialog = ({
-  triggerComponent,
+  children,
   albumTitle,
   albumImages,
   title,
@@ -156,7 +156,9 @@ const CustomDialog = ({
 
   return (
     <>
-      {triggerComponent(handleClickOpen)}
+      <div onClick={handleClickOpen} role="button">
+        {children}
+      </div>
       <DialogContainer open={open} onClose={handleClose} scroll="paper">
         {renderTitle()}
         <DialogContentContainer>
