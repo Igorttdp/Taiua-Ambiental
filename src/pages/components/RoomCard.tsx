@@ -5,8 +5,105 @@ import { ButtonVariant } from "@/interfaces/Enums";
 import { Fira_Sans } from "next/font/google";
 import { IRoomDataProps } from "@/interfaces/RoomsData";
 
+// Images
+import barracaEquipada from "../../../public/barracaEquipada.jpg";
+import areaCamping from "../../../public/areaCamping.jpg";
+import baru from "../../../public/baru.png";
+import jatoba from "../../../public/jatoba.jpg";
+import mangaba from "../../../public/mangaba.png";
+import pequi from "../../../public/pequi.jpg";
+import patoMergulhao from "../../../public/patoMergulhao.jpg";
+import CustomDialog from "./CustomDialog";
+
+// Área de Camping
+import ac1 from "../../assets/rooms/camping/1.jpg";
+import ac2 from "../../assets/rooms/camping/2.jpg";
+import ac3 from "../../assets/rooms/camping/3.jpg";
+import ac4 from "../../assets/rooms/camping/4.jpg";
+import ac5 from "../../assets/rooms/camping/5.jpg";
+import ac6 from "../../assets/rooms/camping/6.jpg";
+import ac7 from "../../assets/rooms/camping/7.jpg";
+import ac8 from "../../assets/rooms/camping/8.jpg";
+import ac9 from "../../assets/rooms/camping/9.jpg";
+import ac10 from "../../assets/rooms/camping/10.jpg";
+import ac11 from "../../assets/rooms/camping/11.jpg";
+import ac12 from "../../assets/rooms/camping/12.jpg";
+import ac13 from "../../assets/rooms/camping/13.jpg";
+import ac14 from "../../assets/rooms/camping/14.jpg";
+import ac15 from "../../assets/rooms/camping/15.jpg";
+import ac16 from "../../assets/rooms/camping/16.jpg";
+import ac17 from "../../assets/rooms/camping/17.jpg";
+import ac18 from "../../assets/rooms/camping/18.jpg";
+
+// Barraca Equipada
+import be1 from "../../assets/rooms/barraca_equipada/1.jpg";
+import be2 from "../../assets/rooms/barraca_equipada/2.jpg";
+import be3 from "../../assets/rooms/barraca_equipada/3.jpg";
+import be4 from "../../assets/rooms/barraca_equipada/4.jpg";
+import be5 from "../../assets/rooms/barraca_equipada/5.jpg";
+import be6 from "../../assets/rooms/barraca_equipada/6.jpg";
+import be7 from "../../assets/rooms/barraca_equipada/7.jpg";
+import be8 from "../../assets/rooms/barraca_equipada/8.jpg";
+
+// Suíte Jatobá
+import jt1 from "../../assets/rooms/jatoba/1.jpg";
+import jt2 from "../../assets/rooms/jatoba/2.jpg";
+import jt3 from "../../assets/rooms/jatoba/3.jpg";
+import jt4 from "../../assets/rooms/jatoba/4.jpg";
+import jt5 from "../../assets/rooms/jatoba/5.jpg";
+import jt6 from "../../assets/rooms/jatoba/6.jpg";
+import jt7 from "../../assets/rooms/jatoba/7.jpg";
+import jt8 from "../../assets/rooms/jatoba/8.jpg";
+import jt9 from "../../assets/rooms/jatoba/9.jpg";
+import jt10 from "../../assets/rooms/jatoba/10.jpg";
+
+// Suíte Baru
+import br1 from "../../assets/rooms/baru/1.jpg";
+import br2 from "../../assets/rooms/baru/2.jpg";
+import br3 from "../../assets/rooms/baru/3.png";
+import br4 from "../../assets/rooms/baru/4.png";
+import br5 from "../../assets/rooms/baru/5.png";
+import br6 from "../../assets/rooms/baru/6.png";
+import br7 from "../../assets/rooms/baru/7.png";
+
+// Suíte Mangaba
+import mg1 from "../../assets/rooms/mangaba/1.png";
+import mg2 from "../../assets/rooms/mangaba/2.png";
+import mg3 from "../../assets/rooms/mangaba/3.png";
+import mg4 from "../../assets/rooms/mangaba/4.png";
+import mg5 from "../../assets/rooms/mangaba/5.png";
+import mg6 from "../../assets/rooms/mangaba/6.png";
+import mg7 from "../../assets/rooms/mangaba/7.png";
+import mg8 from "../../assets/rooms/mangaba/8.png";
+import mg9 from "../../assets/rooms/mangaba/9.png";
+import mg10 from "../../assets/rooms/mangaba/10.png";
+import mg11 from "../../assets/rooms/mangaba/11.png";
+import mg12 from "../../assets/rooms/mangaba/12.jpg";
+import mg13 from "../../assets/rooms/mangaba/13.jpg";
+import mg14 from "../../assets/rooms/mangaba/14.jpg";
+
+// Suíte Pequi
+import pq1 from "../../assets/rooms/pequi/1.jpg";
+import pq2 from "../../assets/rooms/pequi/2.jpg";
+import pq3 from "../../assets/rooms/pequi/3.jpg";
+import pq4 from "../../assets/rooms/pequi/4.jpg";
+import pq5 from "../../assets/rooms/pequi/5.jpg";
+import pq6 from "../../assets/rooms/pequi/6.jpg";
+import pq7 from "../../assets/rooms/pequi/7.jpg";
+import pq8 from "../../assets/rooms/pequi/8.jpg";
+
+// Pato Mergulhão
+import pm1 from "../../assets/rooms/pato_mergulhao/1.jpg";
+import pm2 from "../../assets/rooms/pato_mergulhao/2.jpg";
+import pm3 from "../../assets/rooms/pato_mergulhao/3.jpg";
+import pm4 from "../../assets/rooms/pato_mergulhao/4.jpg";
+import pm5 from "../../assets/rooms/pato_mergulhao/5.jpg";
+import pm6 from "../../assets/rooms/pato_mergulhao/6.jpg";
+import pm7 from "../../assets/rooms/pato_mergulhao/7.jpg";
+import pm8 from "../../assets/rooms/pato_mergulhao/8.jpg";
+
 const RoomCardContainer = styled.article`
-  width: 32rem;
+  width: 30rem;
   height: 40rem;
 
   display: flex;
@@ -36,6 +133,7 @@ const RoomCardContainer = styled.article`
 
     @media (min-width: 600px) and (max-width: 800px) {
       width: 50%;
+      height: auto;
       border-radius: 1.2rem 0 0 1.2rem;
     }
   }
@@ -85,60 +183,102 @@ const fira = Fira_Sans({
 const RoomCard = () => {
   const RoomsData: IRoomDataProps[] = [
     {
-      title: "Barraca Equipada",
-      subtitle: "Barraca equipada individual, tripla e quadrupla",
-      imgSrc:
-        "https://lh3.googleusercontent.com/pw/AIL4fc_1Be2DEyXVX8j_VBtrvZdFpGJAQ6_Q25aSCCWszQBDYF2u2gUedlcEcCYaQdBuGVYLMen5gG6kqMhFU2t5PdnedmxRZQapDY4HvLAHf0z4RieuOio4_2UMv4SOeXTqip85fRKoOYLiKFo6xjThQh_f=w1255-h941-s-no",
-      blurData:
-        "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVR42mPMysvfAwAElgIFWqQ0JQAAAABJRU5ErkJggg==",
-    },
-    {
       title: "Área de Camping",
       subtitle: "Traga sua barraca",
-      imgSrc:
-        "https://lh3.googleusercontent.com/pw/AIL4fc-tRc_VROP0As-E-lHHzdDPp-vbyymGkonHnUTq-1wrwKTsvuug3-M-l3sIfXrULzAxt0sDvqrTYrmbjyA4lVdY3jdvc9nX6jPPMORVSDHeMu1ez4H7xDAPdVKuE8s2QwR4cU7XEzA58LYEHgoG5AeS=w1412-h941-s-no",
-      blurData:
-        "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVR42mN00jPZAwACwAFiKmKPogAAAABJRU5ErkJggg==",
+      imgSrc: areaCamping,
+      album: {
+        title: "Área de Camping",
+        images: [
+          areaCamping,
+          ac1,
+          ac2,
+          ac3,
+          ac4,
+          ac5,
+          ac6,
+          ac7,
+          ac8,
+          ac9,
+          ac10,
+          ac11,
+          ac12,
+          ac13,
+          ac14,
+          ac15,
+          ac16,
+          ac17,
+          ac18,
+        ],
+      },
+    },
+    {
+      title: "Barraca Equipada",
+      subtitle: "Barraca equipada individual, tripla e quadrupla",
+      imgSrc: barracaEquipada,
+      album: {
+        title: "Barraca Equipada",
+        images: [be1, be2, be3, be4, be5, be6, be7, be8],
+      },
     },
     {
       title: "Suíte Jatobá",
       subtitle: "Até 2 pessoas",
-      imgSrc:
-        "https://lh3.googleusercontent.com/pw/AIL4fc90e4uTYTFpETrBCEjyuvh9V3y6hKAqfZy-lP611E18o0glpPbADF3nSdvms5Z-XkYlqi6IdKXAJBQS1YQ6qtTkrrMS7jJFryrCRbKKrZR7MTW2RLt3_cFrAn95b3KNokn-lUTHL0g2GPIeUPe-Otah=w1411-h941-s-no",
-      blurData:
-        "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVR42mOs/P17DwAHkQMtarjEIQAAAABJRU5ErkJggg==",
+      imgSrc: jatoba,
+      album: {
+        title: "Suite Játoba",
+        images: [jt1, jt2, jt3, jt4, jt5, jt6, jt7, jt8, jt9, jt10],
+      },
     },
     {
       title: "Suíte Baru",
       subtitle: "Até 2 pessoas",
-      imgSrc:
-        "https://lh3.googleusercontent.com/pw/AIL4fc8KTrITyRG2Vk-ocwcUCb0zOt7M6dP8_ZLRkSrf5NxTkHpGdyGUYF9VYVd2AAYo9JSsnCXYKgJpCCSTY9oXKIE0c0Nmjy_RxKlCkJgcOZnN51AE-JKxcSNDYpwzvw-BiRfmrsT699hSdah3kYj8B27h=w1404-h941-s-no",
-      blurData:
-        "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVR42mPcu2neHgAHDALL9WjlJAAAAABJRU5ErkJggg==",
+      imgSrc: baru,
+      album: {
+        title: "Suíte Baru",
+        images: [br1, br2, br3, br4, br5, br6, br7],
+      },
     },
     {
       title: "Suíte Mangaba",
       subtitle: "Até 4 pessoa",
-      imgSrc:
-        "https://lh3.googleusercontent.com/pw/AIL4fc9eGGwUMLWfpapcoHz74JJO_iSsFQH8J5i7GGnzAGihcIAFWqdxNgmtXQ8po8hmJCx4JOCaTc2rvgXRlhaHbc5NPfgdew_fMCuX6umROm51dyXAj3ZSry8okwZ-3K8Md6EVxi3tnOo7CjHnuVTYjELz=w1407-h941-s-no",
-      blurData:
-        "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVR42mN8ualxDwAHggLa8BLkhQAAAABJRU5ErkJggg==",
+      imgSrc: mangaba,
+      album: {
+        title: "Suíte Mangaba",
+        images: [
+          mg1,
+          mg2,
+          mg3,
+          mg4,
+          mg5,
+          mg6,
+          mg7,
+          mg8,
+          mg9,
+          mg10,
+          mg11,
+          mg12,
+          mg13,
+          mg14,
+        ],
+      },
     },
     {
       title: "Suíte Pequi",
       subtitle: "Até 3 pessoas",
-      imgSrc:
-        "https://lh3.googleusercontent.com/pw/AIL4fc8yxWhE_W-gHO41iwLrqZuf7Sa0HXTTpJ536g4NW87CwVFUynZnG6xh-UwCmMjp5vien-12Mmo_iL9pYkkz4I6pBOOtKpubq70WVauO6wPtEFroAHJvFCb7Og3HSzJPH1S6mbYOcugK90SZzsCju61O=w1412-h941-s-no",
-      blurData:
-        "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVR42mO8MqVwDwAGtAKXDUKpJwAAAABJRU5ErkJggg==",
+      imgSrc: pequi,
+      album: {
+        title: "Suíte Pequi",
+        images: [pq1, pq2, pq3, pq4, pq5, pq6, pq7, pq8],
+      },
     },
     {
       title: "Suíte Pato Mergulhão",
       subtitle: "Até 3 pessoas",
-      imgSrc:
-        "https://lh3.googleusercontent.com/pw/AIL4fc9OQ8tS3dYn0mxVxKhzsHI42rxAynyUmybsfGe__JsPG1mgo0QBvS2w0SEf0SXywo9TAQ9R6IikzyD_t9JA8CJnsqMl6YUw-cUK1PvzNTZmGNYupE2Ks86AcGgRvVsouYCmG0OtAq4V-Kqeq93Km1XB=w1412-h941-s-no",
-      blurData:
-        "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVR42mNcuWTBHgAGlgKrMoIGTgAAAABJRU5ErkJggg==",
+      imgSrc: patoMergulhao,
+      album: {
+        title: "Suíte Pato Mergulhão",
+        images: [pm1, pm2, pm3, pm4, pm5, pm6, pm7, pm8],
+      },
     },
     // {
     //   title: "",
@@ -172,12 +312,11 @@ const RoomCard = () => {
         <RoomCardContainer key={i}>
           <Image
             src={el.imgSrc}
-            width={320}
+            width={300}
             height={200}
             alt="Quarto"
             draggable={false}
             placeholder="blur"
-            blurDataURL={el.blurData}
           />
 
           <div>
@@ -192,12 +331,22 @@ const RoomCard = () => {
               >
                 Reservar
               </Button>
-              <Button
-                className={fira.className}
-                $variant={ButtonVariant.OUTLINE_GREEN_TEXT}
-              >
-                Ver mais+
-              </Button>
+
+              <CustomDialog
+                albumImages={el.album.images}
+                title={el.title}
+                subtitle={el.subtitle}
+                font={fira.className}
+                triggerComponent={(handleClickOpen: () => void) => (
+                  <Button
+                    className={fira.className}
+                    $variant={ButtonVariant.OUTLINE_GREEN_TEXT}
+                    onClick={handleClickOpen}
+                  >
+                    Ver mais+
+                  </Button>
+                )}
+              />
             </div>
           </div>
         </RoomCardContainer>
