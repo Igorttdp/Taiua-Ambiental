@@ -1,6 +1,13 @@
+import { StaticImageData } from "next/image";
+
 export interface IRoomDataProps {
   title: string;
   subtitle: string;
-  imgSrc: string;
-  blurData?: string;
+  imgSrc: StaticImageData | string;
+  album: IAlbumDataProps;
+}
+
+interface IAlbumDataProps {
+  title: string;
+  images: Array<StaticImageData>;
 }
