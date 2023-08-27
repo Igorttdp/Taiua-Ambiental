@@ -1,9 +1,9 @@
 import Image from "next/image";
 import styled from "styled-components";
 import Check from "../../assets/check.svg";
-import ImageBtn from "../../assets/imagebtn.svg";
 import { Fira_Sans } from "next/font/google";
 import AttributeData from "@/interfaces/AttributesData";
+import CustomDialog from "./CustomDialog";
 
 const fira = Fira_Sans({
   subsets: ["latin"],
@@ -91,15 +91,20 @@ const AttributeCards = () => {
             <h3>{el.title}</h3>
           </div>
           <p>{el.subtitle}</p>
-          <button className={fira.className}>
-            <Image
-              width={26}
-              height={26}
-              src={ImageBtn}
-              alt="ícone de imagem"
-            />
-            <span>Ver Imagens</span>
-          </button>
+          {/* <CustomDialog
+            albumTitle=""
+            triggerComponent={(handleClickOpen: () => void) => (
+              <button className={fira.className} onClick={handleClickOpen}>
+                <Image
+                  width={26}
+                  height={26}
+                  src={ImageBtn}
+                  alt="ícone de imagem"
+                />
+                <span>Ver Imagens</span>
+              </button>
+            )}
+          /> */}
         </AttributeCardContainer>
       ))}
     </>
