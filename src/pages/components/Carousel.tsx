@@ -3,7 +3,7 @@ import styled from "styled-components";
 import Image, { StaticImageData } from "next/image";
 
 interface ICarouselProps {
-  images: StaticImageData[];
+  images: Array<StaticImageData>;
 }
 
 const StyledCCarousel = styled(CCarousel)`
@@ -34,9 +34,9 @@ const StyledCCarousel = styled(CCarousel)`
 const Carousel = ({ images }: ICarouselProps) => {
   return (
     <StyledCCarousel controls transition="crossfade">
-      {images.map((el) => (
+      {images && images.map((el) => (
         <CCarouselItem key={el.src}>
-          <Image src={el} alt="Imagem do Quarto" placeholder="blur" />
+          <Image src={el} width={800} height={800} alt="Imagem do Quarto" placeholder="blur" />
         </CCarouselItem>
       ))}
     </StyledCCarousel>
