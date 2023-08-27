@@ -51,7 +51,7 @@ import jt2 from "../../assets/rooms/jatoba/2.jpg";
 import jt3 from "../../assets/rooms/jatoba/3.jpg";
 import jt4 from "../../assets/rooms/jatoba/4.jpg";
 import jt5 from "../../assets/rooms/jatoba/5.jpg";
-import jt6 from "../../assets/rooms/jatoba/6.jpg";
+// import jt6 from "../../assets/rooms/jatoba/6.JPG";
 import jt7 from "../../assets/rooms/jatoba/7.jpg";
 import jt8 from "../../assets/rooms/jatoba/8.jpg";
 import jt9 from "../../assets/rooms/jatoba/9.jpg";
@@ -226,7 +226,7 @@ const RoomCard = () => {
       imgSrc: jatoba,
       album: {
         title: "Suite Játoba",
-        images: [jt1, jt2, jt3, jt4, jt5, jt6, jt7, jt8, jt9, jt10],
+        images: [jt1, jt2, jt3, jt4, jt5, jt7, jt8, jt9, jt10],
       },
     },
     {
