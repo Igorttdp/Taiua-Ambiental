@@ -75,8 +75,12 @@ const Carousel = ({ images }: ICarouselProps) => {
       ));
   };
 
-  const onSlideCarousel = (active: number) => {
+  const onSlideCarousel = (active: number, direction: string) => {
     setActiveIndex(active);
+
+    if((active + 1) % 4 === 0 && direction === "prev") {
+      setActiveThumb(Math.floor((active) / 4))
+    }
 
     if (active % 4 === 0) {
       setActiveThumb(active / 4);
@@ -84,21 +88,28 @@ const Carousel = ({ images }: ICarouselProps) => {
   };
 
   return (
-    <StyledCCarousel controls transition="crossfade" onSlide={onSlideCarousel}>
-      {images &&
-        images.map((el) => (
-          <CCarouselItem key={el.src}>
-            <Image
-              src={el}
-              width={800}
-              height={800}
-              alt="Imagem do Quarto"
-              placeholder="blur"
-            />
-          </CCarouselItem>
-        ))}
-        {renderThumbs()}
-    </StyledCCarousel>
+    <>
+      <StyledCCarousel
+        controls
+        transition="crossfade"
+        activeIndex={this}
+        onSlide={onSlideCarousel}
+      >
+        {images &&
+          images.map((el) => (
+            <CCarouselItem key={el.src}>
+              <Image
+                src={el}
+                width={800}
+                height={800}
+                alt="Imagem do Quarto"
+                placeholder="blur"
+              />
+            </CCarouselItem>
+          ))}
+      </StyledCCarousel>
+      {renderThumbs()}
+    </>
   );
 };
 
