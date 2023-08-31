@@ -43,21 +43,39 @@ const Carousel = ({ images }: ICarouselProps) => {
   const [activeIndex, setActiveIndex] = useState(0);
 
   const chunkArray = () => {
-    const result: IThumbProps[][] = [];
-    for (let i = 0; i < images.length; i += 4) {
-      const chunk = images.slice(i, i + 4).map((image, index) => ({
-        thumb: image,
-        thumbIndex: i + index,
-      }));
-      result.push(chunk);
+    const result = [];
+    if (Array.isArray(images)) {
+      for (let i = 0; i < images.length; i += 4) {
+        const chunk =
+          Array.isArray(images) &&
+          images.slice(i, i + 4).map((image, index) => ({
+            thumb: image,
+            thumbIndex: i + index,
+          }));
+
+        if (chunk) result.push(chunk);
+      }
+      return result;
     }
-    return result;
+
+    return false;
   };
 
   const thumbs = chunkArray();
 
-  const onSlideCarousel = (active: number) => {
+  const renderThumbs = () => {
+    if (thumbs)
+      return thumbs.map((thumb, i) => (
+        <CarouselThumb
+          key={`thumb${i}`}
+          thumb={thumb}
+          visible={i === activeThumb ? true : false}
+          activeIndex={activeIndex}
+        />
+      ));
+  };
 
+  const onSlideCarousel = (active: number) => {
     setActiveIndex(active);
 
     if (active % 4 === 0) {
@@ -79,15 +97,7 @@ const Carousel = ({ images }: ICarouselProps) => {
             />
           </CCarouselItem>
         ))}
-      {thumbs &&
-        thumbs.map((thumb, i) => (
-          <CarouselThumb
-            key={`thumb${i}`}
-            thumb={thumb}
-            visible={i === activeThumb ? true : false}
-            activeIndex={activeIndex}
-          />
-        ))}
+        {renderThumbs()}
     </StyledCCarousel>
   );
 };

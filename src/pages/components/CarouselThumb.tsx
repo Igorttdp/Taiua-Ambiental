@@ -54,17 +54,18 @@ const CarouselThumb = ({
 }: ICarouselThumbProps) => {
   return (
     <CarouselThumbContainer className={visible ? "activeThumb" : ""}>
-      {thumb.map((el) => (
-        <Image
-          key={`imageThumb${el.thumbIndex}`}
-          data-index={`thumb${el.thumbIndex}`}
-          width={100}
-          height={100}
-          src={el.thumb}
-          alt="Thumbnail"
-          className={el.thumbIndex === activeIndex ? "thumbActive" : ""}
-        />
-      ))}
+      {thumb &&
+        thumb.map((el) => (
+          <Image
+            key={`imageThumb${el.thumbIndex}`}
+            data-index={`thumb${el.thumbIndex}`}
+            width={100}
+            height={100}
+            src={el.thumb}
+            alt="Thumbnail"
+            className={el.thumbIndex === activeIndex ? "thumbActive" : ""}
+          />
+        ))}
     </CarouselThumbContainer>
   );
 };
