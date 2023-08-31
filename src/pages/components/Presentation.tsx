@@ -1,11 +1,11 @@
 import styled from "styled-components";
 
 const Presentation = styled.div`
-  position: relative;
+  position: sticky;
+  top: 16rem;
   max-width: 1200px;
-  padding: 30vh 5rem 0;
+  padding: 0 5rem 6rem;
   margin: 0 auto;
-  min-height: 100vh;
   color: white;
   overflow: hidden;
 
@@ -19,7 +19,6 @@ const Presentation = styled.div`
     display: grid;
     justify-items: center;
     justify-content: center;
-    padding-top: 33vh;
     gap: 6rem;
   }
 
@@ -72,7 +71,7 @@ const Presentation = styled.div`
 
     > h2 {
       font-size: clamp(4.8rem, 5vw, 6.4rem);
-      text-shadow: -100px -4px 12px rgba(0, 0, 0, 0.25);
+      text-shadow: -100px -4px 12px rgba(0, 0, 0, 0.25), #000 1px -1px, #000 -1px 1px, #000 1px 1px, #000 -1px -1px;;
 
       @media (max-width: 425px) {
         text-shadow: -30px -4px 12px rgba(0, 0, 0, 0.25);
