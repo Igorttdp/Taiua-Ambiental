@@ -2,6 +2,7 @@
 import Head from "next/head";
 import Image from "next/image";
 import { Josefin_Sans, Fira_Sans } from "next/font/google";
+import { useEffect, useState } from "react";
 
 // Images
 import Logo from "../assets/Logo.png";
@@ -34,7 +35,7 @@ import AttributeCard from "./components/AttributeCard";
 import VirtuesContainer from "./components/VirtuesContainer";
 
 // Enum
-import { ButtonVariant } from "@/interfaces/Enums";
+import { ButtonVariant, DeviceType } from "@/interfaces/Enums";
 import VisitUsContainer from "./components/VisitUsContainer";
 import Footer from "./components/Footer";
 import Navbar from "./components/Navbar";
@@ -55,6 +56,79 @@ export default function Home() {
     window.open("https://taiuaambiental.motordereservas.com.br/novareserva");
   };
 
+  const getDeviceType = () => {
+    const ua = navigator.userAgent;
+
+    if (
+      /Mobile|iP(hone|od)|Android|BlackBerry|IEMobile|Kindle|Silk-Accelerated|(hpw|web)OS|Opera M(obi|ini)/.test(
+        ua
+      )
+    ) {
+      return DeviceType.MOBILE;
+    }
+
+    if (/(tablet|ipad|playbook|silk)|(android(?!.*mobi))/i.test(ua)) {
+      return DeviceType.TABLET;
+    }
+
+    return DeviceType.DESKTOP;
+  };
+
+  const [videoSrc, setVideoSrc] = useState("ShowcaseLow.mp4");
+  const [device, setDevice] = useState(DeviceType.MOBILE);
+
+  const RenderVideo = () => {
+    if (videoSrc === "Showcase.mp4") {
+      return (
+        <>
+          <video
+            autoPlay
+            muted
+            loop
+            id="ShowcaseVideo"
+            disablePictureInPicture
+            preload="true"
+          >
+            <source src={videoSrc} type="video/mp4" />
+          </video>
+          <video
+            autoPlay
+            muted
+            loop
+            id="ShowcaseVideo"
+            disablePictureInPicture
+            preload="true"
+          >
+            <source src={videoSrc} type="video/mp4" />
+          </video>
+        </>
+      );
+    } else
+      return (
+        <>
+          <video
+            autoPlay
+            muted
+            loop
+            id="ShowcaseVideo"
+            disablePictureInPicture
+            preload="true"
+          >
+            <source src={videoSrc} type="video/mp4" />
+          </video>
+        </>
+      );
+  };
+
+  useEffect(() => {
+    const device = getDeviceType();
+
+    if (device === DeviceType.DESKTOP) {
+      setDevice(DeviceType.DESKTOP);
+      setVideoSrc("Showcase.mp4");
+    }
+  }, [videoSrc]);
+
   return (
     <>
       <Head>
@@ -70,11 +144,11 @@ export default function Home() {
       <HomeContainer className={josefin.className}>
         <GlobalStyle />
         <Navbar />
-        <Container
-          $background={`url(${Background.src}) no-repeat center`}
-          $boxShadow="0px 4px 80px 500px rgba(0, 0, 0, 0.40) inset;"
-        >
-          <Showcase>
+        <Container $boxShadow="0px 4px 80px 500px rgba(0, 0, 0, 0.40) inset;">
+          <Showcase $filter={device === DeviceType.DESKTOP ? "blur(20px)" : "unset"}>
+            <div></div>
+            {RenderVideo()}
+
             <h1>
               <a href="#" draggable={false}>
                 <Image
@@ -96,8 +170,7 @@ export default function Home() {
         </Container>
         <Container
           id="Presentation"
-          $background="linear-gradient(180deg, rgba(61, 84, 48, 0.03) 8.85%, #47702F 27.08%, #FFF 100%)"
-          $transform={"translateY(-30vh)"}
+          $background="linear-gradient(180deg, rgba(0, 0, 0, 0) 60%, #FFF 60%)"
         >
           <Presentation>
             <div>
@@ -138,12 +211,12 @@ export default function Home() {
                 height={263}
                 alt="Folhas"
                 draggable={false}
-                priority
+                placeholder="blur"
               />
             </div>
           </Presentation>
         </Container>
-        <Container id="Accommodations">
+        <Container id="Accommodations" $background="#FFFFFF">
           <Accommodations>
             {/* 1⁰ barraca equipada
           2⁰ área de camping
@@ -156,7 +229,6 @@ export default function Home() {
           9⁰ suite grupo 2 
           10⁰ suite grupo 3 
           11⁰ suite grupo 4 */}
-
             <h2>Acomodações</h2>
             <div>
               <RoomCards />
