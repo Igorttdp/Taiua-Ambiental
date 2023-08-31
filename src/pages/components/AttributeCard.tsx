@@ -1,9 +1,16 @@
 import Image from "next/image";
 import styled from "styled-components";
 import Check from "../../assets/check.svg";
+import ImageBtn from "../../assets/imagebtn.svg";
 import { Fira_Sans } from "next/font/google";
 import AttributeData from "@/interfaces/AttributesData";
 import CustomDialog from "./CustomDialog";
+// Images
+
+import vt1 from "../../assets/rooms/vestiarios/vt1.jpg";
+import vt2 from "../../assets/rooms/vestiarios/vt2.jpg";
+import vt3 from "../../assets/rooms/vestiarios/vt3.jpg";
+import vt4 from "../../assets/rooms/vestiarios/vt4.jpg";
 
 const fira = Fira_Sans({
   subsets: ["latin"],
@@ -22,9 +29,16 @@ const AttributeCardContainer = styled.article`
   justify-content: space-between;
 
   > div {
-    width: fit-content;
-    display: flex;
-    align-items: center;
+    &:first-of-type {
+      width: fit-content;
+      display: flex;
+      align-items: center;
+    }
+
+    &:last-child {
+      display: contents;
+    }
+
     gap: 8px;
 
     > h3 {
@@ -36,7 +50,7 @@ const AttributeCardContainer = styled.article`
     font-size: 1.6rem;
   }
 
-  > button {
+  button.attrBtn {
     color: var(--white);
     display: flex;
     align-items: center;
@@ -64,6 +78,7 @@ const AttributeCards = () => {
     {
       title: "Vestiários",
       subtitle: "Surpreenda-se com nossa limpeza e organização.",
+      album: { title: "Vestiários", images: [vt1, vt2, vt3, vt4] },
     },
     {
       title: "Cozinha equipada",
@@ -91,10 +106,13 @@ const AttributeCards = () => {
             <h3>{el.title}</h3>
           </div>
           <p>{el.subtitle}</p>
-          {/* <CustomDialog
-            albumTitle=""
-            triggerComponent={(handleClickOpen: () => void) => (
-              <button className={fira.className} onClick={handleClickOpen}>
+          {el.album && (
+            <CustomDialog
+              title={el.title}
+              subtitle=""
+              albumImages={el.album.images}
+            >
+              <button className={fira.className + " attrBtn"}>
                 <Image
                   width={26}
                   height={26}
@@ -103,8 +121,8 @@ const AttributeCards = () => {
                 />
                 <span>Ver Imagens</span>
               </button>
-            )}
-          /> */}
+            </CustomDialog>
+          )}
         </AttributeCardContainer>
       ))}
     </>
