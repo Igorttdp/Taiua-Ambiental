@@ -4,6 +4,7 @@ interface IContainerProps {
   $background?: string;
   $transform?: string;
   $boxShadow?: string;
+  $zIndex?: string;
 }
 
 const Container = styled.section<IContainerProps>`
@@ -13,6 +14,8 @@ const Container = styled.section<IContainerProps>`
   background-size: cover;
   transform: ${({ $transform }) => $transform ?? "unset"};
   box-shadow: ${({ $boxShadow }) => $boxShadow ?? "unset"};
+  z-index: ${({ $zIndex }) => $zIndex ?? "1"};
+  position: relative;
 
   @media (max-width: 840px) {
     background: ${({ $background }) => {
