@@ -78,7 +78,7 @@ export default function Home() {
   const [device, setDevice] = useState(DeviceType.MOBILE);
 
   const RenderVideo = () => {
-    if (videoSrc === "Showcase.mp4") {
+    if (device === DeviceType.DESKTOP) {
       return (
         <>
           <video
@@ -125,9 +125,8 @@ export default function Home() {
 
     if (device === DeviceType.DESKTOP) {
       setDevice(DeviceType.DESKTOP);
-      setVideoSrc("Showcase.mp4");
     }
-  }, [videoSrc]);
+  }, []);
 
   return (
     <>
