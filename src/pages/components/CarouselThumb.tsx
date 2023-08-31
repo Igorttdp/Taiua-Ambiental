@@ -36,6 +36,8 @@ const CarouselThumbContainer = styled.div`
   > img {
     width: 5rem !important;
     height: 5.6rem !important;
+    border-radius: 8px;
+    object-fit: cover;
 
     filter: brightness(0.5);
     transition: all 0.3s;
