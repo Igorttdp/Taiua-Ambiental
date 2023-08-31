@@ -22,7 +22,8 @@ const Accommodations = styled.div`
   }
 
   > h2 {
-    transform: translateY(-20vh);
+    margin-top: 5vh;
+    margin-bottom: 20vh;
     font-size: clamp(3.4rem, 8vw, 4.8rem);
   }
 `;
