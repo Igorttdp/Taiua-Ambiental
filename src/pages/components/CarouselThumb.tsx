@@ -1,14 +1,17 @@
 import Image, { StaticImageData } from "next/image";
-import styled from "styled-components";
+import styled, { css } from "styled-components";
 import { IThumbProps } from "./Carousel";
 
 interface ICarouselThumbProps {
   thumb: Array<IThumbProps>;
   visible: boolean;
   activeIndex: number;
+  $fullscreen: boolean;
 }
 
-const CarouselThumbContainer = styled.div`
+type CarouselThumbContainerProps = Pick<ICarouselThumbProps, "$fullscreen">;
+
+const CarouselThumbContainer = styled.div<CarouselThumbContainerProps>`
   width: 100%;
 
   position: absolute;
@@ -25,16 +28,24 @@ const CarouselThumbContainer = styled.div`
 
   @media (max-width: 767.98px) {
     width: fit-content;
-    left: 20px;
-    bottom: 50%;
-    transform: translateY(50%);
-    flex-flow: column nowrap;
+
+    ${({ $fullscreen }) =>
+      $fullscreen
+        ? css`
+            left: 20px;
+            bottom: 50%;
+            transform: translateY(50%);
+            flex-flow: column nowrap;
+          `
+        : css`
+            width: 100%;
+            top: 1.2rem;
+            height: fit-content;
+          `}
   }
 
-  scroll-snap-type: x mandatory;
-
   > img {
-    width: 5rem !important;
+    width: ${({ $fullscreen }) => ($fullscreen ? "5rem" : "4.6rem")} !important;
     height: 5.6rem !important;
     border-radius: 8px;
     object-fit: cover;
@@ -53,9 +64,13 @@ const CarouselThumb = ({
   thumb,
   visible,
   activeIndex,
+  $fullscreen,
 }: ICarouselThumbProps) => {
   return (
-    <CarouselThumbContainer className={visible ? "activeThumb" : ""}>
+    <CarouselThumbContainer
+      className={visible ? "activeThumb" : ""}
+      $fullscreen={$fullscreen}
+    >
       {thumb &&
         thumb.map((el) => (
           <Image
