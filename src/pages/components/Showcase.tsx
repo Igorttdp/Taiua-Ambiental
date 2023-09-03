@@ -52,6 +52,7 @@ const Showcase = styled.div<IShowcaseProps>`
       max-width: 30.9rem;
       max-height: 30.9rem;
       z-index: 3;
+      animation: move .6s ease-in 2s forwards;
 
       @media (max-width: 840px) {
         width: 75%;
@@ -69,6 +70,12 @@ const Showcase = styled.div<IShowcaseProps>`
 
   > img {
     z-index: 9;
+  }
+
+  @keyframes move {
+    100% {
+      transform: scale(0);
+    }
   }
 `;
 
