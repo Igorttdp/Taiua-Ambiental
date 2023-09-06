@@ -73,13 +73,15 @@ const CarouselContainer = styled.div<ICarouselContainerProps>`
       !$fullscreen &&
       css`
         object-fit: contain;
-        height: fit-content;
+        height: inherit;
         border-radius: 0;
-        transition: all .3s;
+        transition: all 0.3s;
       `}
   }
 
-  .carousel-item.active, .carousel-item-start, .carousel-item-end {
+  .carousel-item.active,
+  .carousel-item-start,
+  .carousel-item-end {
     ${({ $fullscreen }) =>
       !$fullscreen &&
       css`
@@ -102,6 +104,7 @@ const Carousel = ({ images }: ICarouselProps) => {
         const chunk =
           Array.isArray(images) &&
           images.slice(i, i + 4).map((image, index) => ({
+            index: i / 4,
             thumb: image,
             thumbIndex: i + index,
           }));
@@ -132,8 +135,18 @@ const Carousel = ({ images }: ICarouselProps) => {
   const onSlideCarousel = (active: number, direction: string) => {
     setActiveIndex(active);
 
-    if ((active + 1) % 4 === 0 && direction === "prev") {
-      setActiveThumb(Math.floor(active / 4));
+    if (direction === "prev") {
+      if ((active + 1) % 4 === 0) setActiveThumb(Math.floor(active / 4));
+      else
+        thumbs &&
+          thumbs.forEach((el) =>
+            el.findIndex((el) => {
+              if (active === el.thumbIndex) {
+                if (el.index !== activeThumb) setActiveThumb(el.index);
+                return;
+              }
+            })
+          );
     }
 
     if (active % 4 === 0) {

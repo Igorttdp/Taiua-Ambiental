@@ -143,7 +143,7 @@ export default function Home() {
       <HomeContainer className={josefin.className}>
         <GlobalStyle />
         <Navbar />
-        <Container $boxShadow="0px 4px 80px 500px rgba(0, 0, 0, 0.40) inset;">
+        <Container $boxShadow="0px 4px 80px 500px rgba(0, 0, 0, 0.40) inset;" $background="linear-gradient(180deg, #226fa0 0%, #4da5dd 100%)">
           <Showcase $filter={device === DeviceType.DESKTOP ? "blur(20px)" : "unset"}>
             <div></div>
             {RenderVideo()}
