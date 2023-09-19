@@ -31,7 +31,6 @@ import VideoModel from "./components/VideoModal";
 import Accommodations from "./components/Accommodations";
 import RoomCards from "./components/RoomCard";
 import DifferentialsContainer from "./components/DifferentialsContainer";
-import AttributeCard from "./components/AttributeCard";
 import VirtuesContainer from "./components/VirtuesContainer";
 
 // Enum
@@ -217,17 +216,6 @@ export default function Home() {
         </Container>
         <Container id="Accommodations" $background="#FFFFFF">
           <Accommodations>
-            {/* 1⁰ barraca equipada
-          2⁰ área de camping
-          3⁰ jatobá 
-          4⁰ baru 
-          5⁰ mangaba
-          6⁰ pequi 
-          7⁰ pato - mergulhão
-          8⁰ suite grupo 1 
-          9⁰ suite grupo 2 
-          10⁰ suite grupo 3 
-          11⁰ suite grupo 4 */}
             <h2>Acomodações</h2>
             <div>
               <RoomCards />
