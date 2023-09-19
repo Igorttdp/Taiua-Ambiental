@@ -26,14 +26,14 @@ const StyledCCarousel = styled(CCarousel)`
 
   @media (max-width: 767.98px) {
     width: 80vw;
+
+    .carousel-item {
+      height: 75vh;
+    }
   }
 
   @media (max-width: 425px) {
     width: 90vw;
-  }
-
-  .carousel-item {
-    height: 75vh;
   }
 
   img {
