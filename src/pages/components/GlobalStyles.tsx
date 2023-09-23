@@ -86,6 +86,43 @@ const GlobalStyle = createGlobalStyle`
             }
         }
     }
+
+    .EmbedShowcase {
+        position: absolute;
+        width: 100%;
+        height: 100vh;
+        background-size: cover;
+        background-position: center;
+        background-repeat: no-repeat;
+    }
+    
+
+    .EmbedIframeShowcase {
+        width: 100%;
+        height: 100vh;
+    }
+
+    .EmbedPresentation {
+        width: 320px;
+        height: 560px;
+    }
+
+    .EmbedIframePresentation {
+        border: 1px solid transparent;
+        border-radius: 20px;
+        background: linear-gradient(to right, white, white),
+            linear-gradient(to right, #a0fc6a, #47702f);
+        background-clip: padding-box, border-box;
+        background-origin: padding-box, border-box;
+
+        @media (max-width: 320px) {
+            width: 30rem;
+        }
+    }
+
+    .ytp-shorts-title-channel {
+        display: none !important;
+    }
 `;
 
 export default GlobalStyle;
