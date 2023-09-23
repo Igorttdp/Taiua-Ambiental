@@ -6,7 +6,6 @@ import { useEffect, useState } from "react";
 
 // Images
 import Logo from "../assets/Logo.png";
-import Background from "../assets/background.jpg";
 import ArrowDown from "../assets/arrowDown.svg";
 import Folhas from "../assets/folhas.png";
 import LogoFlat from "../assets/logo-flat.png";
@@ -40,6 +39,10 @@ import Footer from "./components/Footer";
 import Navbar from "./components/Navbar";
 import AttributeCards from "./components/AttributeCard";
 
+// React-lite-yt-embed
+import LiteYouTubeEmbed from "react-lite-youtube-embed";
+import "react-lite-youtube-embed/dist/LiteYouTubeEmbed.css";
+
 const josefin = Josefin_Sans({
   subsets: ["latin"],
   weight: ["400", "600", "700"],
@@ -55,76 +58,16 @@ export default function Home() {
     window.open("https://taiuaambiental.motordereservas.com.br/novareserva");
   };
 
-  const getDeviceType = () => {
-    const ua = navigator.userAgent;
-
-    if (
-      /Mobile|iP(hone|od)|Android|BlackBerry|IEMobile|Kindle|Silk-Accelerated|(hpw|web)OS|Opera M(obi|ini)/.test(
-        ua
-      )
-    ) {
-      return DeviceType.MOBILE;
-    }
-
-    if (/(tablet|ipad|playbook|silk)|(android(?!.*mobi))/i.test(ua)) {
-      return DeviceType.TABLET;
-    }
-
-    return DeviceType.DESKTOP;
-  };
-
-  const [videoSrc, setVideoSrc] = useState("ShowcaseLow.mp4");
-  const [device, setDevice] = useState(DeviceType.MOBILE);
-
-  const RenderVideo = () => {
-    if (device === DeviceType.DESKTOP) {
-      return (
-        <>
-          <video
-            autoPlay
-            muted
-            loop
-            id="ShowcaseVideo"
-            disablePictureInPicture
-            preload="true"
-          >
-            <source src={videoSrc} type="video/mp4" />
-          </video>
-          <video
-            autoPlay
-            muted
-            loop
-            id="ShowcaseVideo"
-            disablePictureInPicture
-            preload="true"
-          >
-            <source src={videoSrc} type="video/mp4" />
-          </video>
-        </>
-      );
-    } else
-      return (
-        <>
-          <video
-            autoPlay
-            muted
-            loop
-            id="ShowcaseVideo"
-            disablePictureInPicture
-            preload="true"
-          >
-            <source src={videoSrc} type="video/mp4" />
-          </video>
-        </>
-      );
-  };
-
   useEffect(() => {
-    const device = getDeviceType();
+    setTimeout(() => {
+      const article = document.querySelector(".EmbedShowcase");
+      const eventoClick = new MouseEvent("click", {
+        bubbles: true,
+        view: window,
+      });
 
-    if (device === DeviceType.DESKTOP) {
-      setDevice(DeviceType.DESKTOP);
-    }
+      if (article) article.dispatchEvent(eventoClick);
+    }, 300);
   }, []);
 
   return (
@@ -142,11 +85,22 @@ export default function Home() {
       <HomeContainer className={josefin.className}>
         <GlobalStyle />
         <Navbar />
-        <Container $boxShadow="0px 4px 80px 500px rgba(0, 0, 0, 0.40) inset;" $background="linear-gradient(180deg, #226fa0 0%, #4da5dd 100%)">
-          <Showcase $filter={device === DeviceType.DESKTOP ? "blur(20px)" : "unset"}>
-            <div></div>
-            {RenderVideo()}
-
+        <Container
+          $boxShadow="0px 4px 80px 500px rgba(0, 0, 0, 0.40) inset;"
+          $background="linear-gradient(180deg, #226fa0 0%, #4da5dd 100%)"
+        >
+          <Showcase $filter="">
+            <LiteYouTubeEmbed
+              id="gAyUuqNpcus"
+              title="Um pouco da nossa Pousada e camping Taiua Ambiental"
+              wrapperClass="EmbedShowcase"
+              iframeClass="EmbedIframeShowcase"
+              poster="maxresdefault"
+              params="rel=0&showinfo=0&controls=0&loop=1&modestbranding=1"
+              muted
+              noCookie
+              webp
+            />
             <h1>
               <a href="#" draggable={false}>
                 <Image
@@ -163,7 +117,9 @@ export default function Home() {
             <span>
               Um lugar incrível para <br /> momentos especiais
             </span>
-            <Image src={ArrowDown} width={36} alt="Ver mais" />
+            <a href="#">
+              <Image src={ArrowDown} width={36} alt="Ver mais" />
+            </a>
           </Showcase>
         </Container>
         <Container
@@ -195,13 +151,14 @@ export default function Home() {
               </div>
             </div>
             <div>
-              <VideoModel
-                width="320"
-                height="540"
-                src="https://www.youtube.com/embed/H7Bn2rfzeXA"
-                title="YouTube video player"
-                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-                allowFullScreen
+              <LiteYouTubeEmbed
+                id="H7Bn2rfzeXA"
+                title="Um pouco da nossa Pousada e camping Taiua Ambiental"
+                wrapperClass="EmbedPresentation"
+                iframeClass="EmbedIframePresentation"
+                poster="maxresdefault"
+                noCookie
+                webp
               />
               <Image
                 src={Folhas}
