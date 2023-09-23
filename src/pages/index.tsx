@@ -138,6 +138,14 @@ export default function Home() {
         />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <meta httpEquiv="Permissions-Policy" content="interest-cohort=()" />
+
+        <link rel="canonical" href="https://pousadataiua.com/"></link>
+
+        <meta property="og:title" content="Taiuá Ambiental"/>
+        <meta property="og:description" content="Pousada e Camping Taiuá Ambiental, um lugar incrível para quem busca uma experiência única e sustentável em contato com a natureza."/>
+
+        <meta name="twitter:title" content="Taiuá Ambiental"/> 
+        <meta name="twitter:description" content="Pousada e Camping Taiuá Ambiental, um lugar incrível para quem busca uma experiência única e sustentável em contato com a natureza."/>
         <link rel="icon" href="/favicon.png" />
       </Head>
       <HomeContainer className={josefin.className}>
@@ -217,17 +225,6 @@ export default function Home() {
         </Container>
         <Container id="Accommodations" $background="#FFFFFF">
           <Accommodations>
-            {/* 1⁰ barraca equipada
-          2⁰ área de camping
-          3⁰ jatobá 
-          4⁰ baru 
-          5⁰ mangaba
-          6⁰ pequi 
-          7⁰ pato - mergulhão
-          8⁰ suite grupo 1 
-          9⁰ suite grupo 2 
-          10⁰ suite grupo 3 
-          11⁰ suite grupo 4 */}
             <h2>Acomodações</h2>
             <div>
               <RoomCards />
