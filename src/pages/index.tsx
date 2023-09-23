@@ -26,7 +26,6 @@ import Container from "./components/Container";
 import Showcase from "./components/Showcase";
 import Presentation from "./components/Presentation";
 import Button from "./components/Button";
-import VideoModel from "./components/VideoModal";
 import Accommodations from "./components/Accommodations";
 import RoomCards from "./components/RoomCard";
 import DifferentialsContainer from "./components/DifferentialsContainer";
@@ -161,7 +160,8 @@ export default function Home() {
             <div>
               <LiteYouTubeEmbed
                 id="H7Bn2rfzeXA"
-                title="Um pouco da nossa Pousada e camping Taiua Ambiental"
+                title="Conheça nossa pousada"
+                playerClass="EmbedPlayerBtn"
                 wrapperClass="EmbedPresentation"
                 iframeClass="EmbedIframePresentation"
                 poster="maxresdefault"

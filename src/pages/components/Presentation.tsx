@@ -14,6 +14,7 @@ const Presentation = styled.div`
   align-items: center;
   justify-content: space-between;
   gap: 2rem;
+  padding-top: 6rem;
 
   @media (max-width: 840px) {
     display: grid;
@@ -50,31 +51,33 @@ const Presentation = styled.div`
 
     &:nth-child(2) {
       position: relative;
+
+      > article {
+        border: 1px solid transparent;
+        border-radius: 20px;
+
+        @media (max-width: 320px) {
+          width: 30rem;
+        }
+      }
+
       > img {
         transform: rotate(-90deg);
-
         position: absolute;
-
-        &:nth-child(2) {
-          left: -30rem;
-          bottom: 15rem;
-          z-index: -1;
-        }
-
-        &:nth-child(3) {
-          top: 0;
-          right: -4rem;
-          transform: scaleX(-1) rotate(360deg);
-        }
+        left: -30rem;
+        bottom: 15rem;
+        z-index: -1;
       }
     }
 
     > h2 {
       font-size: clamp(4.8rem, 5vw, 6.4rem);
-      text-shadow: -100px -4px 12px rgba(0, 0, 0, 0.25), #000 1px -1px, #000 -1px 1px, #000 1px 1px, #000 -1px -1px;;
+      text-shadow: -100px -4px 12px rgba(0, 0, 0, 0.25), #000 1px -1px,
+        #000 -1px 1px, #000 1px 1px, #000 -1px -1px;
 
       @media (max-width: 425px) {
-        text-shadow: -30px -4px 12px rgba(0, 0, 0, 0.25);
+        text-shadow: -30px -4px 12px rgba(0, 0, 0, 0.25), #000 1px -1px,
+        #000 -1px 1px, #000 1px 1px, #000 -1px -1px;
 
         > span {
           margin-left: 2rem;
