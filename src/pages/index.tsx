@@ -79,6 +79,14 @@ export default function Home() {
         />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <meta httpEquiv="Permissions-Policy" content="interest-cohort=()" />
+
+        <link rel="canonical" href="https://pousadataiua.com/"></link>
+
+        <meta property="og:title" content="Taiuá Ambiental"/>
+        <meta property="og:description" content="Pousada e Camping Taiuá Ambiental, um lugar incrível para quem busca uma experiência única e sustentável em contato com a natureza."/>
+
+        <meta name="twitter:title" content="Taiuá Ambiental"/> 
+        <meta name="twitter:description" content="Pousada e Camping Taiuá Ambiental, um lugar incrível para quem busca uma experiência única e sustentável em contato com a natureza."/>
         <link rel="icon" href="/favicon.png" />
       </Head>
       <HomeContainer className={josefin.className}>
@@ -152,7 +160,8 @@ export default function Home() {
             <div>
               <LiteYouTubeEmbed
                 id="H7Bn2rfzeXA"
-                title="Um pouco da nossa Pousada e camping Taiua Ambiental"
+                title="Conheça nossa pousada"
+                playerClass="EmbedPlayerBtn"
                 wrapperClass="EmbedPresentation"
                 iframeClass="EmbedIframePresentation"
                 poster="maxresdefault"

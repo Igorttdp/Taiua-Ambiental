@@ -1,4 +1,5 @@
 import { createGlobalStyle } from "styled-components";
+import ytbPlayBtn from "../../assets/ytbPlay.svg"
 import "@coreui/coreui/dist/css/coreui.min.css";
 
 const GlobalStyle = createGlobalStyle`
@@ -105,19 +106,39 @@ const GlobalStyle = createGlobalStyle`
     .EmbedPresentation {
         width: 320px;
         height: 560px;
+        position: relative;
+        background-size: cover;
+        background-position: center;
+        background-repeat: no-repeat;
     }
 
     .EmbedIframePresentation {
+        width: 320px;
+        height: 560px;
         border: 1px solid transparent;
         border-radius: 20px;
         background: linear-gradient(to right, white, white),
             linear-gradient(to right, #a0fc6a, #47702f);
         background-clip: padding-box, border-box;
         background-origin: padding-box, border-box;
+        position: relative;
 
         @media (max-width: 320px) {
             width: 30rem;
         }
+    }
+
+    .EmbedPlayerBtn {
+        width: 64px;
+        height: 64px;
+        background-image: url(${() => ytbPlayBtn.src});
+        background-size: contain;
+        background-position: center;
+        background-repeat: no-repeat;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
     }
 
     .ytp-shorts-title-channel {
