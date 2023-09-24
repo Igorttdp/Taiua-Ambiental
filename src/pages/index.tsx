@@ -26,7 +26,6 @@ import Container from "./components/Container";
 import Showcase from "./components/Showcase";
 import Presentation from "./components/Presentation";
 import Button from "./components/Button";
-import VideoModel from "./components/VideoModal";
 import Accommodations from "./components/Accommodations";
 import RoomCards from "./components/RoomCard";
 import DifferentialsContainer from "./components/DifferentialsContainer";
