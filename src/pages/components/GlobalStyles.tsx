@@ -144,6 +144,13 @@ const GlobalStyle = createGlobalStyle`
     .ytp-shorts-title-channel {
         display: none !important;
     }
+
+    .wppBtn {
+        position: fixed;
+        bottom: 2vh;
+        right: 2vw;
+        z-index: 99;
+    }
 `;
 
 export default GlobalStyle;
