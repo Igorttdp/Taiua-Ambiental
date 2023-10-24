@@ -102,6 +102,23 @@ import pm6 from "../../assets/rooms/pato_mergulhao/6.jpg";
 import pm7 from "../../assets/rooms/pato_mergulhao/7.jpg";
 import pm8 from "../../assets/rooms/pato_mergulhao/8.jpg";
 
+// Suíte 1 
+
+// Suíte 2
+import s201 from "../../assets/rooms/suite2/1.jpg";
+import s202 from "../../assets/rooms/suite2/2.jpg";
+import s203 from "../../assets/rooms/suite2/3.jpg";
+
+// Suíte 3
+import s301 from "../../assets/rooms/suite3/1.png";
+import s302 from "../../assets/rooms/suite3/2.png";
+import s303 from "../../assets/rooms/suite3/3.png";
+
+// Suíte 4
+import s401 from "../../assets/rooms/suite4/1.png";
+import s402 from "../../assets/rooms/suite4/2.png";
+import s403 from "../../assets/rooms/suite4/3.png";
+
 const RoomCardContainer = styled.article`
   width: 30rem;
   height: 40rem;
@@ -144,8 +161,8 @@ const RoomCardContainer = styled.article`
     display: flex;
     flex-flow: column nowrap;
     align-items: center;
-    justify-content: center;
-    gap: 3.2rem;
+    justify-content: space-between;
+    padding: 2rem 0;
 
     @media (min-width: 600px) and (max-width: 800px) {
       width: 50%;
@@ -189,7 +206,7 @@ const RoomCard = () => {
   const RoomsData: IRoomDataProps[] = [
     {
       title: "Área de Camping",
-      subtitle: "Traga sua barraca",
+      subtitle: "Traga sua barraca e todos seus acessórios para camping.",
       imgSrc: areaCamping,
       album: {
         title: "Área de Camping",
@@ -217,11 +234,11 @@ const RoomCard = () => {
       },
     },
     {
-      title: "Barraca Equipada",
-      subtitle: "Barraca equipada individual, tripla e quadrupla",
+      title: "Nossas barracas equipadas",
+      subtitle: "Colchão D33, Roupa de Cama Higienizada, Travesseiros, Toalha de Banho e Coberta. Temos Barracas: individuais, dupla e família para 3 pessoas.",
       imgSrc: barracaEquipada,
       album: {
-        title: "Barraca Equipada",
+        title: "Nossas barracas equipadas",
         images: [be1, be2, be3, be4, be5, be6, be7, be8],
       },
     },
@@ -285,6 +302,42 @@ const RoomCard = () => {
         images: [pm1, pm2, pm3, pm4, pm5, pm6, pm7, pm8],
       },
     },
+    {
+      title: "Suíte 1",
+      subtitle: "",
+      imgSrc: patoMergulhao,
+      album: {
+        title: "Suíte 1",
+        images: []
+      }
+    },
+    {
+      title: "Suíte 2",
+      subtitle: "",
+      imgSrc: s201,
+      album: {
+        title: "Suíte 2",
+        images: [s201, s202, s203]
+      }
+    },
+    {
+      title: "Suíte 3",
+      subtitle: "",
+      imgSrc: s301,
+      album: {
+        title: "Suíte 3",
+        images: [s301, s302, s303]
+      }
+    },
+    {
+      title: "Suíte 4",
+      subtitle: "",
+      imgSrc: s401,
+      album: {
+        title: "Suíte 4",
+        images: [s401, s402, s403]
+      }
+    }
   ];
 
   const redirectToLink = () => {
