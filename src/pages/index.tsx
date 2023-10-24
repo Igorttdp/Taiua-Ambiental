@@ -41,6 +41,7 @@ import AttributeCards from "./components/AttributeCard";
 // React-lite-yt-embed
 import LiteYouTubeEmbed from "react-lite-youtube-embed";
 import "react-lite-youtube-embed/dist/LiteYouTubeEmbed.css";
+import WhatsAppBtn from "./components/WhatsAppBtn";
 
 const josefin = Josefin_Sans({
   subsets: ["latin"],
@@ -91,6 +92,7 @@ export default function Home() {
       </Head>
       <HomeContainer className={josefin.className}>
         <GlobalStyle />
+        <WhatsAppBtn />
         <Navbar />
         <Container
           $boxShadow="0px 4px 80px 500px rgba(0, 0, 0, 0.40) inset;"
@@ -115,7 +117,7 @@ export default function Home() {
                   width={309}
                   height={309}
                   alt="Taiuá Ambiental"
-                  placeholder="blur"
+                  priority
                   style={{ borderRadius: "100%" }}
                   draggable={false}
                 />
