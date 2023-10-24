@@ -37,6 +37,7 @@ const Footer = styled.footer<FooterProps>`
       justify-items: center;
       grid-template-areas: "SM"  "LOGO" "CU";
       margin-bottom: 2rem;
+      gap: 6rem;
     }
   }
 
