@@ -103,6 +103,9 @@ import pm7 from "../../assets/rooms/pato_mergulhao/7.jpg";
 import pm8 from "../../assets/rooms/pato_mergulhao/8.jpg";
 
 // Suíte 1 
+import s101 from "../../assets/rooms/suite1/1.jpg";
+import s102 from "../../assets/rooms/suite2/2.jpg";
+import s103 from "../../assets/rooms/suite2/3.jpg";
 
 // Suíte 2
 import s201 from "../../assets/rooms/suite2/1.jpg";
@@ -118,6 +121,7 @@ import s303 from "../../assets/rooms/suite3/3.png";
 import s401 from "../../assets/rooms/suite4/1.png";
 import s402 from "../../assets/rooms/suite4/2.png";
 import s403 from "../../assets/rooms/suite4/3.png";
+import s404 from "../../assets/rooms/suite4/4.png";
 
 const RoomCardContainer = styled.article`
   width: 30rem;
@@ -235,7 +239,7 @@ const RoomCard = () => {
     },
     {
       title: "Nossas barracas equipadas",
-      subtitle: "Colchão D33, Roupa de Cama Higienizada, Travesseiros, Toalha de Banho e Coberta. Temos Barracas: individuais, dupla e família para 3 pessoas.",
+      subtitle: "Colchão D33, Roupa de Cama Higienizada, Travesseiros, Toalha de Banho e Cobertas. Temos Barracas: individuais, dupla e família para 3 pessoas.",
       imgSrc: barracaEquipada,
       album: {
         title: "Nossas barracas equipadas",
@@ -304,16 +308,16 @@ const RoomCard = () => {
     },
     {
       title: "Suíte 1",
-      subtitle: "",
-      imgSrc: patoMergulhao,
+      subtitle: "Até 6 pessoas",
+      imgSrc: s101,
       album: {
         title: "Suíte 1",
-        images: []
+        images: [s101, s102, s103]
       }
     },
     {
       title: "Suíte 2",
-      subtitle: "",
+      subtitle: "Até 6 pessoas",
       imgSrc: s201,
       album: {
         title: "Suíte 2",
@@ -322,7 +326,7 @@ const RoomCard = () => {
     },
     {
       title: "Suíte 3",
-      subtitle: "",
+      subtitle: "Até 6 pessoas",
       imgSrc: s301,
       album: {
         title: "Suíte 3",
@@ -331,11 +335,11 @@ const RoomCard = () => {
     },
     {
       title: "Suíte 4",
-      subtitle: "",
-      imgSrc: s401,
+      subtitle: "Até 6 pessoas",
+      imgSrc: s403,
       album: {
         title: "Suíte 4",
-        images: [s401, s402, s403]
+        images: [s401, s402, s403, s404]
       }
     }
   ];
