@@ -354,7 +354,7 @@ const RoomCard = () => {
         <RoomCardContainer key={i}>
           <Image
             src={el.imgSrc}
-            width={300}
+            width={298}
             height={200}
             alt="Quarto"
             draggable={false}
