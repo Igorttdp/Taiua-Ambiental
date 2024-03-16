@@ -12,6 +12,7 @@ export enum CssVars {
   BLACK = "--black",
   TRANSPARENT = "--transparent",
   DEFAULT = "--blue-500-default",
+  DEFAULT_DARK = "--blue-500-default-dark",
   BLUE_100 = "--blue-100",
   BLUE_200 = "--blue-200",
   BLUE_400 = "--blue-400",

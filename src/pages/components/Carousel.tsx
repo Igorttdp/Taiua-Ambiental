@@ -7,8 +7,21 @@ import { useState } from "react";
 import fullscreen from "../../assets/fullscreen.svg";
 import fullscreenExit from "../../assets/fullscreen_exit.svg";
 
+interface StylesCCarouselProps {
+  borderRadius?: string;
+  imageWidth?: string;
+  imageHeight?: string;
+  containerWidth?: string;
+}
+
 interface ICarouselProps {
   images: Array<StaticImageData>;
+  styles?: {
+    borderRadius?: string;
+    containerWidth?: string;
+    imageHeight?: string;
+  };
+  useThumbs?: boolean;
 }
 
 export interface IThumbProps {
@@ -20,9 +33,13 @@ interface ICarouselContainerProps {
   $fullscreen: boolean;
 }
 
-const StyledCCarousel = styled(CCarousel)`
-  width: 38rem;
+const StyledCCarousel = styled(CCarousel)<StylesCCarouselProps>`
+  width: ${({ containerWidth }) => containerWidth ?? "45rem"};
   position: relative;
+
+  .carousel-inner {
+    border-radius: ${({ borderRadius }) => borderRadius ?? "1rem"};
+  }
 
   @media (max-width: 767.98px) {
     width: 80vw;
@@ -37,9 +54,8 @@ const StyledCCarousel = styled(CCarousel)`
   }
 
   img {
-    border-radius: 1rem;
-    width: 38rem;
-    height: 46rem;
+    width: 100%;
+    height: ${({imageHeight}) => imageHeight ?? "60rem"};
     object-fit: cover;
 
     @media (max-width: 767.98px) {
@@ -92,12 +108,14 @@ const CarouselContainer = styled.div<ICarouselContainerProps>`
   }
 `;
 
-const Carousel = ({ images }: ICarouselProps) => {
+const Carousel = ({ images, styles, useThumbs }: ICarouselProps) => {
   const [activeThumb, setActiveThumb] = useState(0);
   const [activeIndex, setActiveIndex] = useState(0);
   const [fullscreen, setfullscreen] = useState(true);
 
   const chunkArray = () => {
+    if (!useThumbs) return;
+
     const result = [];
     if (Array.isArray(images)) {
       for (let i = 0; i < images.length; i += 4) {
@@ -167,14 +185,15 @@ const Carousel = ({ images }: ICarouselProps) => {
         transition="crossfade"
         activeIndex={this}
         onSlide={onSlideCarousel}
+        borderRadius={styles?.borderRadius}
+        containerWidth={styles?.containerWidth}
+        imageHeight={styles?.imageHeight}
       >
         {images &&
           images.map((el) => (
             <CCarouselItem key={el.src}>
               <Image
                 src={el}
-                width={800}
-                height={800}
                 alt="Imagem do Quarto"
                 placeholder="blur"
               />

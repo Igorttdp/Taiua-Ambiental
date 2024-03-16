@@ -5,11 +5,12 @@ interface IContainerProps {
   $transform?: string;
   $boxShadow?: string;
   $zIndex?: string;
+  minHeight?: string;
 }
 
 const Container = styled.section<IContainerProps>`
   width: 100%;
-  min-height: 100vh;
+  min-height: ${({ minHeight }) => minHeight ?? "100vh"};
   background: ${({ $background }) => $background ?? ""};
   background-size: cover;
   transform: ${({ $transform }) => $transform ?? "unset"};

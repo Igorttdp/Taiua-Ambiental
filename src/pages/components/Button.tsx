@@ -48,7 +48,7 @@ const Button = styled.button<IButtonProps>`
           ? CssVars.DEFAULT
           : $variant && [4, 5].includes($variant)
           ? CssVars.GREEN_600
-          : CssVars.DEFAULT}
+          : CssVars.DEFAULT_DARK}
     );
 
     color: var(${CssVars.WHITE});

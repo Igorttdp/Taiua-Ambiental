@@ -1,33 +1,25 @@
 import styled from "styled-components";
 
 const Presentation = styled.div`
-  position: sticky;
-  top: 16rem;
-  max-width: 1200px;
-  padding: 0 5rem 6rem;
+  position: relative;
   margin: 0 auto;
   color: white;
   overflow: hidden;
+  min-height: 100vh;
 
-  display: flex;
-  flex-flow: row wrap;
-  align-items: center;
-  justify-content: space-between;
   gap: 2rem;
-  padding-top: 6rem;
-
-  @media (max-width: 840px) {
-    display: grid;
-    justify-items: center;
-    justify-content: center;
-    gap: 6rem;
-  }
 
   > div {
     &:nth-child(1) {
       display: flex;
       flex-flow: column nowrap;
       gap: 10rem;
+      width: 38rem;
+      position: absolute;
+      left: 50%;
+      top: 50%;
+      transform: translate(-50%, -50%);
+      z-index: 2;
 
       @media (max-width: 840px) {
         gap: 5rem;
@@ -77,7 +69,7 @@ const Presentation = styled.div`
 
       @media (max-width: 425px) {
         text-shadow: -30px -4px 12px rgba(0, 0, 0, 0.25), #000 1px -1px,
-        #000 -1px 1px, #000 1px 1px, #000 -1px -1px;
+          #000 -1px 1px, #000 1px 1px, #000 -1px -1px;
 
         > span {
           margin-left: 2rem;

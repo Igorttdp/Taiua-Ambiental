@@ -36,13 +36,9 @@ const DialogContainer = styled(Dialog)`
 
 const DialogContentContainer = styled(DialogContent)`
   display: flex;
-  justify-content: center;
+  justify-content: start;
   gap: 2.6rem;
-  padding: 7rem 6rem;
-
-  @media (max-width: 767.98px) {
-    padding: 0;
-  }
+  padding: 0;
 
   > div:first-child {
     position: relative;
@@ -163,7 +159,11 @@ const CustomDialog = ({
         {renderTitle()}
         <DialogContentContainer>
           <div>
-            <Carousel images={albumImages} />
+            <Carousel
+              images={albumImages}
+              styles={{ borderRadius: "1rem 0 0 1rem"}}
+              useThumbs
+            />
             <div className="d-md-none d-block">
               <h5>{title}</h5>
               <p>{subtitle}</p>

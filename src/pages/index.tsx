@@ -42,6 +42,8 @@ import AttributeCards from "./components/AttributeCard";
 import LiteYouTubeEmbed from "react-lite-youtube-embed";
 import "react-lite-youtube-embed/dist/LiteYouTubeEmbed.css";
 import WhatsAppBtn from "./components/WhatsAppBtn";
+import Carousel from "./components/Carousel";
+import PresentationImages from "./components/PresentationImages";
 
 const josefin = Josefin_Sans({
   subsets: ["latin"],
@@ -83,11 +85,17 @@ export default function Home() {
 
         <link rel="canonical" href="https://pousadataiua.com/"></link>
 
-        <meta property="og:title" content="Taiuá Ambiental"/>
-        <meta property="og:description" content="Pousada e Camping Taiuá Ambiental, um lugar incrível para quem busca uma experiência única e sustentável em contato com a natureza."/>
+        <meta property="og:title" content="Taiuá Ambiental" />
+        <meta
+          property="og:description"
+          content="Pousada e Camping Taiuá Ambiental, um lugar incrível para quem busca uma experiência única e sustentável em contato com a natureza."
+        />
 
-        <meta name="twitter:title" content="Taiuá Ambiental"/> 
-        <meta name="twitter:description" content="Pousada e Camping Taiuá Ambiental, um lugar incrível para quem busca uma experiência única e sustentável em contato com a natureza."/>
+        <meta name="twitter:title" content="Taiuá Ambiental" />
+        <meta
+          name="twitter:description"
+          content="Pousada e Camping Taiuá Ambiental, um lugar incrível para quem busca uma experiência única e sustentável em contato com a natureza."
+        />
         <link rel="icon" href="/favicon.png" />
       </Head>
       <HomeContainer className={josefin.className}>
@@ -133,7 +141,7 @@ export default function Home() {
         </Container>
         <Container
           id="Presentation"
-          $background="linear-gradient(180deg, rgba(0, 0, 0, 0) 60%, #FFF 60%)"
+          minHeight="80vh"
         >
           <Presentation>
             <div>
@@ -145,40 +153,21 @@ export default function Home() {
 
               <div>
                 <Button
-                  $variant={ButtonVariant.OUTLINE_BLUE_TEXT}
+                  $variant={ButtonVariant.BLUE}
                   className={fira.className}
                   onClick={redirectToLink}
                 >
                   Reservar
                 </Button>
                 <Button
-                  $variant={ButtonVariant.OUTLINE_BLUE_TEXT}
+                  $variant={ButtonVariant.BLUE}
                   className={fira.className}
                 >
                   Fale Conosco
                 </Button>
               </div>
             </div>
-            <div>
-              <LiteYouTubeEmbed
-                id="H7Bn2rfzeXA"
-                title="Conheça nossa pousada"
-                playerClass="EmbedPlayerBtn"
-                wrapperClass="EmbedPresentation"
-                iframeClass="EmbedIframePresentation"
-                poster="maxresdefault"
-                noCookie
-                webp
-              />
-              <Image
-                src={Folhas}
-                width={563}
-                height={263}
-                alt="Folhas"
-                draggable={false}
-                placeholder="blur"
-              />
-            </div>
+            <PresentationImages />
           </Presentation>
         </Container>
         <Container id="Accommodations" $background="#FFFFFF">
