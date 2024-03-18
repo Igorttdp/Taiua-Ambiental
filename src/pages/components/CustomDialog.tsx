@@ -135,7 +135,7 @@ const CustomDialog = ({
     setOpen(false);
   };
 
-  const redirectToLink = (idQuarto: number) => {
+  const redirectToLink = (idQuarto?: number) => {
     window.open(`https://taiuaambiental.motordereservas.com.br/novareserva?idquartoCategoria=${idQuarto}`);
   };
 
