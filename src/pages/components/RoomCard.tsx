@@ -212,6 +212,7 @@ const RoomCard = () => {
       title: "Área de Camping",
       subtitle: "Traga sua barraca e todos seus acessórios para camping.",
       imgSrc: areaCamping,
+      idQuarto: 0,
       album: {
         title: "Área de Camping",
         images: [
@@ -241,6 +242,7 @@ const RoomCard = () => {
       title: "Nossas barracas equipadas",
       subtitle: "Colchão D33, Roupa de Cama Higienizada, Travesseiros, Toalha de Banho e Cobertas. Temos Barracas: individuais, dupla e família para 3 pessoas.",
       imgSrc: barracaEquipada,
+      idQuarto: 1,
       album: {
         title: "Nossas barracas equipadas",
         images: [be1, be2, be3, be4, be5, be6, be7, be8],
@@ -250,6 +252,7 @@ const RoomCard = () => {
       title: "Suíte Jatobá",
       subtitle: "Até 2 pessoas",
       imgSrc: jatoba,
+      idQuarto: 6,
       album: {
         title: "Suite Játoba",
         images: [jt1, jt2, jt3, jt4, jt5, jt7, jt8, jt9, jt10],
@@ -259,6 +262,7 @@ const RoomCard = () => {
       title: "Suíte Baru",
       subtitle: "Até 2 pessoas",
       imgSrc: baru,
+      idQuarto: 5,
       album: {
         title: "Suíte Baru",
         images: [br1, br2, br3, br4, br5, br6, br7],
@@ -268,6 +272,7 @@ const RoomCard = () => {
       title: "Suíte Mangaba",
       subtitle: "Até 4 pessoa",
       imgSrc: mangaba,
+      idQuarto: 9,
       album: {
         title: "Suíte Mangaba",
         images: [
@@ -292,6 +297,7 @@ const RoomCard = () => {
       title: "Suíte Pequi",
       subtitle: "Até 3 pessoas",
       imgSrc: pequi,
+      idQuarto: 8,
       album: {
         title: "Suíte Pequi",
         images: [pq1, pq2, pq3, pq4, pq5, pq6, pq7, pq8],
@@ -301,6 +307,7 @@ const RoomCard = () => {
       title: "Suíte Pato Mergulhão",
       subtitle: "Até 3 pessoas",
       imgSrc: patoMergulhao,
+      idQuarto: 7, 
       album: {
         title: "Suíte Pato Mergulhão",
         images: [pm1, pm2, pm3, pm4, pm5, pm6, pm7, pm8],
@@ -310,6 +317,7 @@ const RoomCard = () => {
       title: "Suíte 1",
       subtitle: "Até 6 pessoas",
       imgSrc: s101,
+      idQuarto: 10,
       album: {
         title: "Suíte 1",
         images: [s101, s102, s103]
@@ -319,6 +327,7 @@ const RoomCard = () => {
       title: "Suíte 2",
       subtitle: "Até 6 pessoas",
       imgSrc: s201,
+      idQuarto: 10,
       album: {
         title: "Suíte 2",
         images: [s201, s202, s203]
@@ -328,6 +337,7 @@ const RoomCard = () => {
       title: "Suíte 3",
       subtitle: "Até 6 pessoas",
       imgSrc: s301,
+      idQuarto: 10,
       album: {
         title: "Suíte 3",
         images: [s301, s302, s303]
@@ -337,6 +347,7 @@ const RoomCard = () => {
       title: "Suíte 4",
       subtitle: "Até 6 pessoas",
       imgSrc: s403,
+      idQuarto: 10,
       album: {
         title: "Suíte 4",
         images: [s401, s402, s403, s404]
@@ -344,8 +355,8 @@ const RoomCard = () => {
     }
   ];
 
-  const redirectToLink = () => {
-    window.open("https://taiuaambiental.motordereservas.com.br/novareserva");
+  const redirectToLink = (idQuarto: number) => {
+    window.open(`https://taiuaambiental.motordereservas.com.br/novareserva?idquartoCategoria=${idQuarto}`);
   };
 
   return (
@@ -369,7 +380,7 @@ const RoomCard = () => {
               <Button
                 className={fira.className}
                 $variant={ButtonVariant.OUTLINE_BLUE_TEXT}
-                onClick={redirectToLink}
+                onClick={() => redirectToLink(el.idQuarto)}
               >
                 Reservar
               </Button>
@@ -379,6 +390,7 @@ const RoomCard = () => {
                 title={el.title}
                 subtitle={el.subtitle}
                 font={fira.className}
+                idQuarto={el.idQuarto}
               >
                 <Button
                   className={fira.className}

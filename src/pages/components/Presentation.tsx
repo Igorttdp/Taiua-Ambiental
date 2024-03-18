@@ -7,8 +7,6 @@ const Presentation = styled.div`
   overflow: hidden;
   min-height: 100vh;
 
-  gap: 2rem;
-
   > div {
     &:nth-child(1) {
       display: flex;
@@ -42,7 +40,10 @@ const Presentation = styled.div`
     }
 
     &:nth-child(2) {
-      position: relative;
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
 
       > article {
         border: 1px solid transparent;

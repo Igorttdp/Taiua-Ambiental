@@ -11,14 +11,14 @@ interface StylesCCarouselProps {
   borderRadius?: string;
   imageWidth?: string;
   imageHeight?: string;
-  containerWidth?: string;
+  fullScreen?: boolean;
 }
 
 interface ICarouselProps {
   images: Array<StaticImageData>;
   styles?: {
     borderRadius?: string;
-    containerWidth?: string;
+    fullScreen?: boolean;
     imageHeight?: string;
   };
   useThumbs?: boolean;
@@ -34,7 +34,7 @@ interface ICarouselContainerProps {
 }
 
 const StyledCCarousel = styled(CCarousel)<StylesCCarouselProps>`
-  width: ${({ containerWidth }) => containerWidth ?? "45rem"};
+  width: ${({ fullScreen }) => fullScreen ? "100%" : "45rem"};
   position: relative;
 
   .carousel-inner {
@@ -42,15 +42,15 @@ const StyledCCarousel = styled(CCarousel)<StylesCCarouselProps>`
   }
 
   @media (max-width: 767.98px) {
-    width: 80vw;
+    width: ${({ fullScreen }) => fullScreen ? "100%" : "80vw"};
 
     .carousel-item {
-      height: 75vh;
+      height: ${({imageHeight}) => imageHeight ?? "75vh"};
     }
   }
 
   @media (max-width: 425px) {
-    width: 90vw;
+    width: ${({ fullScreen }) => fullScreen ? "100%" : "90vw"};
   }
 
   img {
@@ -60,7 +60,7 @@ const StyledCCarousel = styled(CCarousel)<StylesCCarouselProps>`
 
     @media (max-width: 767.98px) {
       width: inherit;
-      height: 75vh;
+      height: ${({imageHeight}) => imageHeight ?? "75vh"};
     }
   }
 `;
@@ -186,7 +186,7 @@ const Carousel = ({ images, styles, useThumbs }: ICarouselProps) => {
         activeIndex={this}
         onSlide={onSlideCarousel}
         borderRadius={styles?.borderRadius}
-        containerWidth={styles?.containerWidth}
+        fullScreen={styles?.fullScreen}
         imageHeight={styles?.imageHeight}
       >
         {images &&

@@ -6,10 +6,18 @@ import jt4 from "../../assets/rooms/jatoba/4.jpg";
 import jt5 from "../../assets/rooms/jatoba/5.jpg";
 import Carousel from "./Carousel";
 
+
 const PresentationImages = () => {
   const images = [jt1, jt2, jt3, jt4, jt5];
 
-  return <Carousel images={images} styles={{borderRadius: "0", containerWidth: "100%", imageHeight: "100vh"}} />;
+  return (
+    <div>
+      <Carousel
+        images={images}
+        styles={{ borderRadius: "0", fullScreen: true, imageHeight: "100vh" }}
+      />
+    </div>
+  );
 };
 
 export default PresentationImages;

@@ -5,6 +5,7 @@ export interface IRoomDataProps {
   subtitle: string;
   imgSrc: StaticImageData | string;
   album: IAlbumDataProps;
+  idQuarto: number;
 }
 
 interface IAlbumDataProps {

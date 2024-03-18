@@ -9,6 +9,8 @@ const Footer = styled.footer<FooterProps>`
   color: var(--white);
   text-align: center;
   padding: 3.4rem;
+  position: relative;
+  z-index: 9;
 
   span {
     font-size: clamp(1.2rem, 4vw, 1.6rem);

@@ -17,6 +17,7 @@ interface CustomDialogProps {
   title: string;
   subtitle: string;
   font?: string;
+  idQuarto: number;
 }
 
 const DialogContainer = styled(Dialog)`
@@ -122,6 +123,7 @@ const CustomDialog = ({
   title,
   subtitle,
   font,
+  idQuarto,
 }: CustomDialogProps) => {
   const [open, setOpen] = useState(false);
 
@@ -133,8 +135,8 @@ const CustomDialog = ({
     setOpen(false);
   };
 
-  const redirectToLink = () => {
-    window.open("https://taiuaambiental.motordereservas.com.br/novareserva");
+  const redirectToLink = (idQuarto: number) => {
+    window.open(`https://taiuaambiental.motordereservas.com.br/novareserva?idquartoCategoria=${idQuarto}`);
   };
 
   const renderTitle = () => {
@@ -167,7 +169,7 @@ const CustomDialog = ({
             <div className="d-md-none d-block">
               <h5>{title}</h5>
               <p>{subtitle}</p>
-              <Button $variant={ButtonVariant.BLUE} onClick={redirectToLink}>
+              <Button $variant={ButtonVariant.BLUE} onClick={() => redirectToLink(idQuarto)}>
                 Reservar
               </Button>
             </div>
@@ -178,7 +180,7 @@ const CustomDialog = ({
             <div>
               <Button
                 $variant={ButtonVariant.OUTLINE_BLUE_TEXT}
-                onClick={redirectToLink}
+                onClick={() => redirectToLink(idQuarto)}
               >
                 Reservar
               </Button>

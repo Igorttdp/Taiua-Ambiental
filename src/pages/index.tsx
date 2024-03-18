@@ -2,7 +2,7 @@
 import Head from "next/head";
 import Image from "next/image";
 import { Josefin_Sans, Fira_Sans } from "next/font/google";
-import { useEffect, useState } from "react";
+import { useEffect } from "react";
 
 // Images
 import Logo from "../assets/Logo.png";
@@ -60,6 +60,12 @@ export default function Home() {
     window.open("https://taiuaambiental.motordereservas.com.br/novareserva");
   };
 
+  const CallWppMessage = () => {
+    window.open(
+      "https://api.whatsapp.com/send/?phone=556299818977&text=%23Site+%E2%80%A2+Ol%C3%A1%2C+gostaria+de+mais+informa%C3%A7%C3%B5es+sobre+a+hospedagem.+Poderia+me+ajudar+por+favor%3F&type=phone_number&app_absent=0"
+    );
+  };
+
   useEffect(() => {
     setTimeout(() => {
       const article = document.querySelector(".EmbedShowcase");
@@ -100,11 +106,12 @@ export default function Home() {
       </Head>
       <HomeContainer className={josefin.className}>
         <GlobalStyle />
-        <WhatsAppBtn />
+        <WhatsAppBtn onClickFn={CallWppMessage} />
         <Navbar />
         <Container
           $boxShadow="0px 4px 80px 500px rgba(0, 0, 0, 0.40) inset;"
           $background="linear-gradient(180deg, #226fa0 0%, #4da5dd 100%)"
+          $zIndex="9"
         >
           <Showcase $filter="">
             <LiteYouTubeEmbed
@@ -117,6 +124,7 @@ export default function Home() {
               muted
               noCookie
               webp
+              
             />
             <h1>
               <a href="#" draggable={false}>
@@ -162,6 +170,7 @@ export default function Home() {
                 <Button
                   $variant={ButtonVariant.BLUE}
                   className={fira.className}
+                  onClick={CallWppMessage}
                 >
                   Fale Conosco
                 </Button>
