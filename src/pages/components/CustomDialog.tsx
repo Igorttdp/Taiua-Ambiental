@@ -17,7 +17,7 @@ interface CustomDialogProps {
   title: string;
   subtitle: string;
   font?: string;
-  idQuarto: number;
+  idQuarto?: number;
 }
 
 const DialogContainer = styled(Dialog)`
