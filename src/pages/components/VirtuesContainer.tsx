@@ -10,6 +10,10 @@ const VirtuesContainer = styled.div`
   gap: 1.2rem;
   padding: 8rem;
 
+  > img {
+    mix-blend-mode: multiply;
+  }
+
   @media (max-width: 1300px) {
     justify-content: center;
   }
