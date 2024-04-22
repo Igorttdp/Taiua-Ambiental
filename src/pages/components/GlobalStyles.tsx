@@ -1,5 +1,5 @@
 import { createGlobalStyle } from "styled-components";
-import ytbPlayBtn from "../../assets/ytbPlay.svg"
+import ytbPlayBtn from "../../assets/ytbPlay.svg";
 import "@coreui/coreui/dist/css/coreui.min.css";
 
 const GlobalStyle = createGlobalStyle`
@@ -51,39 +51,40 @@ const GlobalStyle = createGlobalStyle`
     }
 
     .MuiDrawer-paper {
-        background: rgba(255, 255, 255, 0.5);
+        background: linear-gradient(135deg, #071e2d 0%, #1b2615 100%);
         backdrop-filter: blur(10px);
         -webkit-backdrop-filter: blur(10px);
 
         > ul {
             height: 100%;
             font-size: 2rem;
-            padding: 3rem 1rem;
-            padding-left: 4rem;
+            padding-top: 6rem;
             color: #fff;
 
             > li {
-                width: fit-content;
+                width: 100%;
                 font-weight: 500;
-                text-shadow: #000 1px -1px, #000 -1px 1px, #000 1px 1px, #000 -1px -1px;
-                padding: 2rem 0;
-                list-style: disc;
                 position: relative;
+                list-style: none;
 
-                &::after {
-                    content: "";
-                    position: absolute;
-                    width: 0%;
-                    height: 3px;
-                    display: block;
-                    transition: all 0.3s ease;
-                    bottom: 25%;
+                &:hover {
+                    background-color: var(--green-900);
+
+                    &:last-child {
+                    background-color: var(--blue-500-default);
+                    }
+
+                    transition: all 0.3s;
                 }
 
-                &:hover::after {
+                > a {
+                    display: flex;
+                    align-items: center;
                     width: 100%;
-                    height: 1px;
-                    background-color: #fff;
+                    height: 90px;
+                    padding-left: 6rem;
+                    padding-right: 1.5rem;
+                    justify-content: end;
                 }
             }
         }

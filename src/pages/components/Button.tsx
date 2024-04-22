@@ -1,21 +1,27 @@
-import styled from "styled-components";
+import styled, { css } from "styled-components";
 import { CssVars, ButtonVariant } from "@/interfaces/Enums";
 
 interface IButtonProps {
   $variant?: ButtonVariant;
+  $fullWidth?: boolean;
+  $fillHeight?: {
+    max: string;
+  };
 }
 
 const Button = styled.button<IButtonProps>`
   display: inline-flex;
+  max-height: ${({$fillHeight}) => $fillHeight ? $fillHeight.max : "unset"};
+  height: ${({$fillHeight}) => $fillHeight ? "100vh" : "unset"};
   padding: 8px 40px;
   justify-content: center;
   align-items: center;
   gap: 10px;
-  border-radius: 8px;
+  border-radius: ${({ $fullWidth }) => ($fullWidth ? 0 : "8px")};
   border: 2px solid
     var(
       ${({ $variant }) =>
-      $variant === ButtonVariant.GREEN ||
+        $variant === ButtonVariant.GREEN ||
         $variant === ButtonVariant.OUTLINE_GREEN ||
         $variant === ButtonVariant.OUTLINE_GREEN_TEXT
           ? CssVars.GREEN_600

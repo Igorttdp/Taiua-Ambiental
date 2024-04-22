@@ -11,16 +11,18 @@ import Button from "./Button";
 
 // Images
 import Logo from "../../assets/Logo.png";
+import Menu from "../../assets/material-symbols_menu.svg";
 
 // MUI Components
 import Drawer from "@mui/material/Drawer";
+import { ButtonVariant } from "@/interfaces/Enums";
 
 const NavbarContainer = styled.nav`
   width: 100%;
-  background: rgba(139, 139, 139, 0.15);
+  background: linear-gradient(90deg, #071e2d 0%, #1b2615 100%);
   backdrop-filter: blur(10px);
   -webkit-backdrop-filter: blur(10px);
-  padding: 8px 4vw;
+  padding-left: 4vw;
 
   position: fixed;
   z-index: 10;
@@ -29,13 +31,10 @@ const NavbarContainer = styled.nav`
   flex-flow: row nowrap;
   align-items: center;
   justify-content: space-between;
-  gap: 1.4rem;
 
-  @media (min-width: 1200px) {
-    > div {
-      > button#Menu {
-        display: none;
-      }
+  @media (min-width: 893px) {
+    > div#menu__container {
+      display: none;
     }
   }
 
@@ -63,10 +62,10 @@ const NavbarContainer = styled.nav`
     display: flex;
     flex-flow: row nowrap;
     align-items: center;
-    gap: 2vw;
     text-align: center;
+    margin: 0;
 
-    @media (max-width: 1200px) {
+    @media (max-width: 892px) {
       display: none;
     }
 
@@ -74,23 +73,35 @@ const NavbarContainer = styled.nav`
       color: var(--white);
       font-size: 2rem;
       font-weight: 500;
-      text-shadow: #000 1px -1px, #000 -1px 1px, #000 1px 1px, #000 -1px -1px;
-      position: relative;
+      height: 100vh;
+      max-height: 90px;
+      transition: all 0.3s;
+      cursor: pointer;
 
-      &::after {
-        content: "";
-        position: absolute;
-        width: 0%;
-        height: 2px;
-        display: block;
-        transition: all 0.3s ease;
-        bottom: -0.5rem;
+      @media (max-width: 1100px) {
+        font-size: 1.7rem;
       }
 
-      &:hover::after {
-        width: 100%;
-        height: 1px;
-        background-color: #fff;
+      @media (max-width: 930px) {
+        font-size: 1.5rem;
+      }
+
+      &:hover {
+        background-color: var(--green-900);
+
+        &:last-child {
+          background-color: var(--blue-500-default);
+        }
+
+        transition: all 0.3s;
+      }
+
+      > a {
+        padding: 0 4rem;
+        height: 100vh;
+        max-height: 90px;
+        display: flex;
+        align-items: center;
       }
     }
   }
@@ -133,20 +144,25 @@ const Navbar = () => {
           <a href="#Accommodations">Acomodações</a>
         </li>
         <li>
-          <a href="#Attributes">O que Ofereçemos</a>
+          <a href="#VisitUs">Nos Visite</a>
         </li>
         <li>
-          <a href="#Virtues">Missão & Valores</a>
+          <a href="#">Eventos</a>
         </li>
         <li>
-          <a href="#VisitUs">Venha nos Visitar</a>
+          <a onClick={redirectToLink}>Reservar</a>
         </li>
       </ul>
 
-      <div>
-        <Button onClick={redirectToLink}>Reservar</Button>
-        <Button id="Menu" onClick={drawerHandler}>
-          Menu
+      <div id="menu__container">
+        <Button
+          id="Menu"
+          onClick={drawerHandler}
+          $variant={ButtonVariant.GREEN}
+          $fullWidth
+          $fillHeight={{ max: "80px" }}
+        >
+          <Image src={Menu} width={24} height={24} alt="Menu" />
         </Button>
         <Drawer anchor={"right"} open={isOpen} onClose={drawerHandler}>
           <ul>
@@ -162,17 +178,12 @@ const Navbar = () => {
             </li>
             <li>
               <a onClick={drawerHandler} href="#Attributes">
-                O que Ofereçemos
+                Nos Visite
               </a>
             </li>
             <li>
-              <a onClick={drawerHandler} href="#Virtues">
-                Missão & Valores
-              </a>
-            </li>
-            <li>
-              <a onClick={drawerHandler} href="#VisitUs">
-                Venha nos Visitar
+              <a onClick={drawerHandler} href="#">
+                Eventos
               </a>
             </li>
           </ul>
