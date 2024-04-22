@@ -7,7 +7,6 @@ import { useEffect } from "react";
 // Images
 import Logo from "../assets/Logo.png";
 import ArrowDown from "../assets/arrowDown.svg";
-import Folhas from "../assets/folhas.png";
 import LogoFlat from "../assets/logo-flat.png";
 import Chapada1 from "../assets/chapada1.png";
 import Chapada2 from "../assets/chapada2.png";
@@ -18,6 +17,9 @@ import Youtube from "../assets/youtube.svg";
 import Email from "../assets/email.svg";
 import WhatsApp from "../assets/whatsapp.svg";
 import Phone from "../assets/phone.svg";
+import Key from "../assets/key.svg";
+import Cottage from "../assets/cottage.svg";
+import WhatsAppOutline from "../assets/whatsapp_outline.svg"
 
 // Styled-Components
 import HomeContainer from "./components/HomeContainer";
@@ -38,12 +40,8 @@ import Footer from "./components/Footer";
 import Navbar from "./components/Navbar";
 import AttributeCards from "./components/AttributeCard";
 
-// React-lite-yt-embed
-import LiteYouTubeEmbed from "react-lite-youtube-embed";
-import "react-lite-youtube-embed/dist/LiteYouTubeEmbed.css";
 import WhatsAppBtn from "./components/WhatsAppBtn";
-import Carousel from "./components/Carousel";
-import PresentationImages from "./components/PresentationImages";
+import ShowcaseImages from "./components/ShowcaseImages";
 
 const josefin = Josefin_Sans({
   subsets: ["latin"],
@@ -110,22 +108,10 @@ export default function Home() {
         <Navbar />
         <Container
           $boxShadow="0px 4px 80px 500px rgba(0, 0, 0, 0.40) inset;"
-          $background="linear-gradient(180deg, #226fa0 0%, #4da5dd 100%)"
+          $background="linear-gradient(90deg, #071e2d 0%, #1b2615 100%)"
           $zIndex="9"
         >
           <Showcase $filter="">
-            <LiteYouTubeEmbed
-              id="gAyUuqNpcus"
-              title="Um pouco da nossa Pousada e camping Taiua Ambiental"
-              wrapperClass="EmbedShowcase"
-              iframeClass="EmbedIframeShowcase"
-              poster="maxresdefault"
-              params="rel=0&showinfo=0&controls=0&loop=1&modestbranding=1"
-              muted
-              noCookie
-              webp
-              
-            />
             <h1>
               <a href="#" draggable={false}>
                 <Image
@@ -145,38 +131,49 @@ export default function Home() {
             <a href="#">
               <Image src={ArrowDown} width={36} alt="Ver mais" />
             </a>
+
+            <ShowcaseImages />
+            <div id="fade"></div>
           </Showcase>
         </Container>
-        <Container
-          id="Presentation"
-          minHeight="80vh"
-        >
+        <Container id="Presentation" minHeight="80vh">
           <Presentation>
             <div>
-              <h2>
-                <span>A NOSSA</span>
-                <br />
-                <span>POUSADA</span>
-              </h2>
-
               <div>
-                <Button
-                  $variant={ButtonVariant.BLUE}
-                  className={fira.className}
-                  onClick={redirectToLink}
-                >
-                  Reservar
-                </Button>
-                <Button
-                  $variant={ButtonVariant.BLUE}
-                  className={fira.className}
-                  onClick={CallWppMessage}
-                >
-                  Fale Conosco
-                </Button>
+                <h2>
+                  <span>A NOSSA</span>
+                  <br />
+                  <span>POUSADA</span>
+                </h2>
+
+                <div>
+                  <Button
+                    $variant={ButtonVariant.BLUE}
+                    className={fira.className}
+                    onClick={redirectToLink}
+                  >
+                    <Image src={Key} alt="Ícone Chave" />
+                    Reservar
+                  </Button>
+                  <Button
+                    $variant={ButtonVariant.GREEN}
+                    className={fira.className}
+                    onClick={redirectToLink}
+                  >
+                    <Image src={WhatsAppOutline} alt="Ícone WhatsApp" />
+                    Fale Conosco
+                  </Button>
+                  <Button
+                    $variant={ButtonVariant.BLUE}
+                    className={fira.className}
+                    onClick={CallWppMessage}
+                  >
+                    <Image src={Cottage} alt="Ícone Chalé" />
+                    Ver Quartos
+                  </Button>
+                </div>
               </div>
             </div>
-            <PresentationImages />
           </Presentation>
         </Container>
         <Container id="Accommodations" $background="#FFFFFF">

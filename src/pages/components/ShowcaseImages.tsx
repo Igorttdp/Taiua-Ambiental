@@ -8,7 +8,7 @@ import p5 from "../../assets/presentation/p5.jpg"
 import Carousel from "./Carousel";
 
 
-const PresentationImages = () => {
+const ShowcaseImages = () => {
   const images = [p1, p2, p3, p4, p5];
 
   return (
@@ -21,4 +21,4 @@ const PresentationImages = () => {
   );
 };
 
-export default PresentationImages;
+export default ShowcaseImages;

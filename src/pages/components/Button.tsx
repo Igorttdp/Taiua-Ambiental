@@ -11,8 +11,8 @@ interface IButtonProps {
 
 const Button = styled.button<IButtonProps>`
   display: inline-flex;
-  max-height: ${({$fillHeight}) => $fillHeight ? $fillHeight.max : "unset"};
-  height: ${({$fillHeight}) => $fillHeight ? "100vh" : "unset"};
+  max-height: ${({ $fillHeight }) => ($fillHeight ? $fillHeight.max : "unset")};
+  height: ${({ $fillHeight }) => ($fillHeight ? "100vh" : "unset")};
   padding: 8px 40px;
   justify-content: center;
   align-items: center;
@@ -52,6 +52,8 @@ const Button = styled.button<IButtonProps>`
       ${({ $variant }) =>
         $variant && [1, 2].includes($variant)
           ? CssVars.DEFAULT
+          : $variant && [3].includes($variant)
+          ? CssVars.GREEN_900
           : $variant && [4, 5].includes($variant)
           ? CssVars.GREEN_600
           : CssVars.DEFAULT_DARK}

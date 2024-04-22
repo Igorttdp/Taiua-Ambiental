@@ -15,32 +15,34 @@ const Showcase = styled.div<IShowcaseProps>`
   justify-content: center;
   gap: 4rem;
 
-  > div {
-    background-image: linear-gradient(
-      180deg,
-      rgba(61, 84, 48, 0.03) 8.85%,
-      #47702f 27.08%,
-      #FFF 100%
-    );
-    position: absolute;
+  > div:not(#fade) {
+    display: flex;
+    flex-flow: column nowrap;
+    gap: 10rem;
     width: 100%;
-    min-height: 100%;
-    bottom: -60%;
-    z-index: 2;
-  }
-
-  > video {
-    object-fit: fill;
     position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 2;
 
-    &:first-of-type {
-      z-index: 1;
-      height: 100vh;
+    @media (max-width: 840px) {
+      gap: 5rem;
     }
 
-    &:last-of-type {
-      width: 100%;
-      filter: ${({ $filter }) => $filter};
+    > div {
+      display: flex;
+      flex-flow: row wrap;
+      justify-content: space-between;
+      gap: 1.2rem;
+
+      @media (max-width: 425px) {
+        padding: 1rem;
+
+        > button {
+          width: 100%;
+        }
+      }
     }
   }
 
@@ -52,7 +54,6 @@ const Showcase = styled.div<IShowcaseProps>`
       max-width: 30.9rem;
       max-height: 30.9rem;
       z-index: 3;
-      animation: move .3s ease-in 2s forwards;
 
       @media (max-width: 840px) {
         width: 75%;
@@ -70,6 +71,15 @@ const Showcase = styled.div<IShowcaseProps>`
 
   > a {
     z-index: 9;
+  }
+
+  #fade {
+    width: 100%;
+    height: 15vh;
+    background: linear-gradient(180deg, transparent 0%, #47702F 100%);
+    position: absolute;
+    bottom: -1%;
+    z-index: 9999;
   }
 
   @keyframes move {
