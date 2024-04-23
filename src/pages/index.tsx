@@ -38,7 +38,7 @@ import Navbar from "./components/Navbar";
 import VisitUsContainer from "./components/VisitUsContainer";
 import WhatsAppBtn from "./components/WhatsAppBtn";
 import ShowcaseImages from "./components/ShowcaseImages";
-import TaiuaTimeline from "./components/Timeline/Timeline";
+import TaiuaTimeline from "./components/Timeline";
 
 // Enum
 import { ButtonVariant } from "@/interfaces/Enums";

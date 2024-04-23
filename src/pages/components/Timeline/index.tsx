@@ -26,8 +26,8 @@ import Flag from "../../../assets/flag.svg";
 import Culture from "../../../assets/culture.svg";
 
 // Utils
-import { dotBlue, dotGreen } from "./Utils";
-import TimelineContainerProps from "./Interface";
+import { dotBlue, dotGreen } from "./utils";
+import { TimelineContainerProps } from "./interface";
 
 const fira = Fira_Sans({
   subsets: ["latin"],

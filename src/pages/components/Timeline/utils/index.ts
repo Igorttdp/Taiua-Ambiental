@@ -1,4 +1,4 @@
-const dotStyles = {
+export const dotStyles = {
   color: "#000000",
   fontSize: "2rem",
   fontWeight: "500",
@@ -8,15 +8,14 @@ const dotStyles = {
   background: "transparent",
   borderRadius: "8px",
 };
-
-const dotBlue = {
+export const dotBlue = {
   ...dotStyles,
   borderColor: "var(--blue-500-default)",
 };
 
-const dotGreen = {
+export const dotGreen = {
   ...dotStyles,
   borderColor: "var(--green-900)",
 };
 
-export { dotStyles, dotBlue, dotGreen };
+export default function a () {}
