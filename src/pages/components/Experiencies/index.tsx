@@ -4,7 +4,7 @@ import ExperienceContainer from "./components/ExperienceContainer";
 const Experiences = () => {
   return (
     <ExperienceContainer>
-      <h2>OExperiências Oferecidas</h2>
+      <h2>Experiências Oferecidas</h2>
 
       <div>
         <AttributeCards />
