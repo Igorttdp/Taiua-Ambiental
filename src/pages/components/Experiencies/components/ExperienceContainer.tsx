@@ -14,7 +14,8 @@ const ExperienceContainer = styled.div`
   }
 
   > h2 {
-    font-size: 4.8rem;
+    font-size: clamp(3.5rem, 6.5vw, 4.8rem);
+    text-align: center;
   }
 
   > div {
