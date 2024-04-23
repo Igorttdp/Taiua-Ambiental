@@ -4,53 +4,75 @@ const VirtuesContainer = styled.div`
   max-width: 1660px;
   margin: 0 auto;
   display: flex;
-  flex-flow: row wrap-reverse;
+  flex-flow: row nowrap;
   align-items: center;
-  justify-content: space-between;
-  gap: 1.2rem;
-  padding: 8rem;
+  justify-content: center;
+  gap: 10rem;
+  padding: 8rem 0;
+  color: black;
+  position: relative;
+
+  @media (max-width: 1280px) {
+    padding: 8rem 3rem;
+
+    > img {
+      display: none;
+    }
+  }
 
   > img {
-    mix-blend-mode: multiply;
-  }
+    position: sticky;
+    top: 20%;
 
-  @media (max-width: 1300px) {
-    justify-content: center;
-  }
-
-  @media (max-width: 800px) {
-    > img {
-      width: 100%;
-      height: max-content;
+    &:nth-child(1) {
+      align-self: flex-start;
     }
   }
 
-  @media (max-width: 600px) {
-    padding: 8rem 4vw;
-  }
+  div {
+    > hr {
+      margin: 5.8rem 0;
+      border-top: 3px solid;
+      border-color: #5e943e;
+      opacity: unset;
 
-  > div {
-    width: 60rem;
-    min-height: 48rem;
-    padding: 5rem 3.8rem;
-    text-align: center;
-    border: 4px solid #5e943e;
-    border-radius: 3rem;
-
-    @media (max-width: 425px) {
-    padding: 5rem 6vw;
-  }
-
-    > h2 {
-      font-size: clamp(3.8rem, 4vw, 4.8rem);
-      text-transform: uppercase;
-      margin-bottom: 1.2rem;
+      &:last-of-type {
+        border-color: #2a8ecc;
+      }
     }
 
-    > p {
-      font-size: 2rem;
-      text-align: justify;
+    > div {
+      position: relative;
+      z-index: 2;
+      padding: 40px;
+      background: linear-gradient(120deg, #254611 0%, #143346 100%);
+      border-radius: 12px;
+      color: #ffffff;
+
+      > h3 {
+        font-size: clamp(3rem, 10vw, 4.8rem);
+      }
+
+      &:nth-of-type(2) > h3 {
+        width: 100%;
+        text-align: right;
+      }
+
+      &:nth-of-type(3) > h3 {
+        width: 100%;
+        text-align: center;
+      }
+
+      > p {
+        font-size: clamp(2rem, 4vw, 3.2rem);
+        text-align: justify;
+      }
     }
+  }
+
+  > div:not(.taiuaContainer) {
+    max-width: 57.8rem;
+    width: 100%;
   }
 `;
 

@@ -7,7 +7,6 @@ import { useEffect } from "react";
 // Images
 import Logo from "../assets/Logo.png";
 import ArrowDown from "../assets/arrowDown.svg";
-import LogoFlat from "../assets/logo-flat.png";
 import Chapada1 from "../assets/chapada1.png";
 import Chapada2 from "../assets/chapada2.png";
 import Chapada3 from "../assets/chapada3.png";
@@ -20,6 +19,8 @@ import Phone from "../assets/phone.svg";
 import Key from "../assets/key.svg";
 import Cottage from "../assets/cottage.svg";
 import WhatsAppOutline from "../assets/whatsapp_outline.svg";
+import TaiuaVerde from "../assets/taiua_verde.png";
+import TaiuaAzul from "../assets/taiua_azul.png";
 
 // Components & Styled-Components
 import HomeContainer from "./components/HomeContainer";
@@ -157,7 +158,7 @@ export default function Home() {
                   <Button
                     $variant={ButtonVariant.GREEN}
                     className={fira.className}
-                    onClick={redirectToLink}
+                    onClick={CallWppMessage}
                   >
                     <Image src={WhatsAppOutline} alt="Ícone WhatsApp" />
                     Fale Conosco
@@ -165,7 +166,8 @@ export default function Home() {
                   <Button
                     $variant={ButtonVariant.BLUE}
                     className={fira.className}
-                    onClick={CallWppMessage}
+                    as="a"
+                    href="#Accommodations"
                   >
                     <Image src={Cottage} alt="Ícone Chalé" />
                     Ver Quartos
@@ -198,27 +200,35 @@ export default function Home() {
           style={{ minHeight: "fit-content" }}
         >
           <VirtuesContainer>
-            <div>
-              <h2>Missão e Visão</h2>
-              <p>
-                Uma abordagem sustentável para o turismo! Bem-vindo à Pousada e
-                Camping Taiuá Ambiental, um lugar incrível para quem busca uma
-                experiência única e sustentável em contato com a natureza. Aqui,
-                você encontrará um ambiente que inspira e encanta pela sua
-                beleza natural e pelo comprometimento com a preservação do Bioma
-                Cerrado. Taiua Ambiental oferece vários tipos de hospedagem,
-                promovendo bem estar e conforto aos hóspedes. Tudo aqui é
-                pensado com cuidado, desde a escolha dos materiais utilizados na
-                construção até as práticas sustentáveis de gestão.Nós também
-                realizamos eventos abertos para hóspedes e comunidade para
-                promover arte, cultura e conhecimento. Aproveite a proximidade
-                do Parque Nacional Chapada dos Veadeiros, Patrimônio Mundial
-                Natural da Humanidade pela UNESCO, e explore todas as maravilhas
-                da região.
-              </p>
-            </div>
+            <Image src={TaiuaVerde} placeholder="blur" alt="Taiuá Ambiental" />
 
-            <Image src={LogoFlat} alt="ícone de imagem" placeholder="blur" />
+            <div>
+              <div>
+                <h3>Missão</h3>
+                <p>
+                  Proporcionar uma experiência única e sustentável, unindo os
+                  visitantes à natureza e promovendo a consciência ambiental.
+                </p>
+              </div>
+              <hr />
+              <div>
+                <h3>Visão</h3>
+                <p>
+                  Proporcionar uma experiência única e sustentável, unindo os
+                  visitantes à natureza e promovendo a consciência ambiental.
+                </p>
+              </div>
+              <hr />
+              <div>
+                <h3>Valores</h3>
+                <p>
+                  Nosso compromisso é criar um ambiente acolhedor, onde cada
+                  hóspede se sinta parte de uma comunidade que valoriza a
+                  natureza e a arte.
+                </p>
+              </div>
+            </div>
+            <Image src={TaiuaAzul} placeholder="blur" alt="Taiuá Ambiental" />
           </VirtuesContainer>
         </Container>
         <Container
