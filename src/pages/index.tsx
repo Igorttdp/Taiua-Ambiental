@@ -19,7 +19,7 @@ import WhatsApp from "../assets/whatsapp.svg";
 import Phone from "../assets/phone.svg";
 import Key from "../assets/key.svg";
 import Cottage from "../assets/cottage.svg";
-import WhatsAppOutline from "../assets/whatsapp_outline.svg"
+import WhatsAppOutline from "../assets/whatsapp_outline.svg";
 
 // Styled-Components
 import HomeContainer from "./components/HomeContainer";
@@ -42,6 +42,7 @@ import AttributeCards from "./components/AttributeCard";
 
 import WhatsAppBtn from "./components/WhatsAppBtn";
 import ShowcaseImages from "./components/ShowcaseImages";
+import TaiuaTimeline from "./components/Timeline/Timeline";
 
 const josefin = Josefin_Sans({
   subsets: ["latin"],
@@ -173,6 +174,8 @@ export default function Home() {
                   </Button>
                 </div>
               </div>
+
+              <TaiuaTimeline />
             </div>
           </Presentation>
         </Container>

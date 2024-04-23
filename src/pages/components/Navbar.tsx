@@ -177,7 +177,7 @@ const Navbar = () => {
               </a>
             </li>
             <li>
-              <a onClick={drawerHandler} href="#Attributes">
+              <a onClick={drawerHandler} href="#VisitUs">
                 Nos Visite
               </a>
             </li>

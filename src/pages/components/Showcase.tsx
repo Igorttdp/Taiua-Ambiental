@@ -8,6 +8,7 @@ const Showcase = styled.div<IShowcaseProps>`
   position: relative;
   color: white;
   min-height: 100vh;
+  overflow: hidden;
 
   display: flex;
   flex-flow: column nowrap;
@@ -25,6 +26,7 @@ const Showcase = styled.div<IShowcaseProps>`
     top: 50%;
     transform: translate(-50%, -50%);
     z-index: 2;
+    filter: brightness(0.65);
 
     @media (max-width: 840px) {
       gap: 5rem;
@@ -37,8 +39,6 @@ const Showcase = styled.div<IShowcaseProps>`
       gap: 1.2rem;
 
       @media (max-width: 425px) {
-        padding: 1rem;
-
         > button {
           width: 100%;
         }
@@ -76,7 +76,7 @@ const Showcase = styled.div<IShowcaseProps>`
   #fade {
     width: 100%;
     height: 15vh;
-    background: linear-gradient(180deg, transparent 0%, #47702F 100%);
+    background: linear-gradient(180deg, transparent 0%, #47702f 80%);
     position: absolute;
     bottom: -1%;
     z-index: 9999;

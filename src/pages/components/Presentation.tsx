@@ -6,14 +6,14 @@ const Presentation = styled.div`
   color: white;
   overflow: hidden;
   min-height: 100vh;
-  background: linear-gradient(180deg, #47702f 0%, #ffffff 100%);
+  background: linear-gradient(180deg, #47702f 0%, #ffffff 30%);
 
   > div {
     display: flex;
     flex-flow: column nowrap;
     align-items: center;
     justify-content: center;
-    padding-top: 8rem;
+    padding-top: calc(90px + 6rem);
 
     > div {
       &:nth-child(1) {
@@ -21,7 +21,8 @@ const Presentation = styled.div`
         flex-flow: column nowrap;
         align-items: center;
         gap: 10rem;
-        width: 70rem;
+        max-width: 70rem;
+        width: 100%;
         z-index: 2;
 
         @media (max-width: 840px) {
@@ -33,6 +34,15 @@ const Presentation = styled.div`
           flex-flow: row wrap;
           justify-content: space-between;
           gap: 1.2rem;
+
+          @media (max-width: 699.98px) {
+            width: 80%;
+            flex-flow: column;
+          }
+
+          @media (max-width: 375px) {
+            width: 95%;
+          }
 
           @media (max-width: 425px) {
             padding: 1rem;
