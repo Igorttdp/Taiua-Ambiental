@@ -23,9 +23,3 @@ export enum CssVars {
   GREEN_600 = "--green-600",
   GREEN_900 = "--green-900",
 }
-
-export enum DeviceType {
-  MOBILE = 0,
-  TABLET = 1,
-  DESKTOP = 2,
-}

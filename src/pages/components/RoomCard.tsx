@@ -153,7 +153,7 @@ const RoomCardContainer = styled.article`
     object-fit: cover;
 
     @media (min-width: 600px) and (max-width: 800px) {
-      width: 50%;
+      width: 55%;
       height: auto;
       border-radius: 1.2rem 0 0 1.2rem;
     }
@@ -169,7 +169,9 @@ const RoomCardContainer = styled.article`
     padding: 2rem 0;
 
     @media (min-width: 600px) and (max-width: 800px) {
-      width: 50%;
+      width: 45%;
+      justify-content: center;
+      gap: 2rem;
     }
 
     h3 {

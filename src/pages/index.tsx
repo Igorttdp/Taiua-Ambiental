@@ -21,7 +21,7 @@ import Key from "../assets/key.svg";
 import Cottage from "../assets/cottage.svg";
 import WhatsAppOutline from "../assets/whatsapp_outline.svg";
 
-// Styled-Components
+// Components & Styled-Components
 import HomeContainer from "./components/HomeContainer";
 import GlobalStyle from "./components/GlobalStyles";
 import Container from "./components/Container";
@@ -30,19 +30,17 @@ import Presentation from "./components/Presentation";
 import Button from "./components/Button";
 import Accommodations from "./components/Accommodations";
 import RoomCards from "./components/RoomCard";
-import DifferentialsContainer from "./components/DifferentialsContainer";
 import VirtuesContainer from "./components/VirtuesContainer";
-
-// Enum
-import { ButtonVariant, DeviceType } from "@/interfaces/Enums";
-import VisitUsContainer from "./components/VisitUsContainer";
+import Experiences from "./components/Experiencies";
 import Footer from "./components/Footer";
 import Navbar from "./components/Navbar";
-import AttributeCards from "./components/AttributeCard";
-
+import VisitUsContainer from "./components/VisitUsContainer";
 import WhatsAppBtn from "./components/WhatsAppBtn";
 import ShowcaseImages from "./components/ShowcaseImages";
 import TaiuaTimeline from "./components/Timeline/Timeline";
+
+// Enum
+import { ButtonVariant } from "@/interfaces/Enums";
 
 const josefin = Josefin_Sans({
   subsets: ["latin"],
@@ -192,13 +190,7 @@ export default function Home() {
           $background="linear-gradient(180deg, #fff 0%, #cce6f5 100%)"
           style={{ minHeight: "fit-content" }}
         >
-          <DifferentialsContainer>
-            <h2>O que ofereçemos</h2>
-
-            <div>
-              <AttributeCards />
-            </div>
-          </DifferentialsContainer>
+          <Experiences />
         </Container>
         <Container
           id="Virtues"
@@ -354,7 +346,7 @@ export default function Home() {
           </div>
         </div>
 
-        <span>Copyright © 2023 Taiuá Ambiental</span>
+        <span>Copyright © 2024 Taiuá Ambiental</span>
       </Footer>
     </>
   );
