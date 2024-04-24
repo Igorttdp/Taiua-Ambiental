@@ -5,10 +5,7 @@ const nextConfig = {
     formats: ["image/avif", "image/webp"],
   },
   compiler: {
-    styledComponents: {
-      displayName: true,
-      ssr: true,
-    },
+    styledComponents: true
   },
 };
 
