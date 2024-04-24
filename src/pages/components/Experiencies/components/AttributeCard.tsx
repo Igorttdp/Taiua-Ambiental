@@ -7,6 +7,7 @@ import AttributeData from "@/interfaces/AttributesData";
 
 // Third Part Libraries
 import styled from "styled-components";
+import { v4 } from "uuid";
 
 // Components
 import Button from "../../Button";
@@ -202,32 +203,36 @@ const AttributeCards = () => {
     AttributesData.map((el, i) => {
       if (el.album) {
         return (
-          <>
-            <AttributeCardContainer key={"attr" + el.title + i}>
-              <Image src={el.album.images[0]} placeholder="blur" alt="Imagem" />
-              <div>
-                <h3 className={josefin.className}>{el.title}</h3>
-                <p className={fira.className}>{el.subtitle}</p>
-                <CustomDialog
-                  albumImages={el.album.images}
-                  title={el.album.title}
-                  subtitle={el.subtitle}
-                >
-                  <Button>
-                    <Image src={ImageBtn} alt="Ícone de Imagem" />
-                    Ver Imagens
-                  </Button>
-                </CustomDialog>
+          <AttributeCardContainer key={v4()}>
+            <Image
+              src={el.album.images[0]}
+              width={386}
+              height={300}
+              placeholder="blur"
+              alt="Imagem"
+            />
+            <div>
+              <h3 className={josefin.className}>{el.title}</h3>
+              <p className={fira.className}>{el.subtitle}</p>
+              <CustomDialog
+                albumImages={el.album.images}
+                title={el.album.title}
+                subtitle={el.subtitle}
+              >
+                <Button>
+                  <Image src={ImageBtn} alt="Ícone de Imagem" />
+                  Ver Imagens
+                </Button>
+              </CustomDialog>
 
-                {el.title === "Eventos culturais" && (
-                  <Button>
-                    <Image src={Culture} width={32} alt="Eventos culturais" />
-                    Ver Eventos
-                  </Button>
-                )}
-              </div>
-            </AttributeCardContainer>
-          </>
+              {el.title === "Eventos culturais" && (
+                <Button>
+                  <Image src={Culture} width={32} alt="Eventos culturais" />
+                  Ver Eventos
+                </Button>
+              )}
+            </div>
+          </AttributeCardContainer>
         );
       }
     });
@@ -235,13 +240,7 @@ const AttributeCards = () => {
   const renderSolidCards = () =>
     AttributesData.map((el, i) => {
       if (!el.album)
-        return (
-          <SolidCard
-            key={"solidCard" + el.title + i}
-            title={el.title}
-            subtitle={el.subtitle}
-          />
-        );
+        return <SolidCard key={v4()} title={el.title} subtitle={el.subtitle} />;
     });
 
   return (
