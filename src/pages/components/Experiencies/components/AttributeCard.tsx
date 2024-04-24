@@ -15,6 +15,7 @@ import CustomDialog from "../../CustomDialog";
 
 // Images
 import ImageBtn from "../../../../assets/imagebtn.svg";
+import Culture from "../../../../assets/culture.svg";
 
 import vt1 from "../../../../assets/rooms/vestiarios/vt1.jpg";
 import vt2 from "../../../../assets/rooms/vestiarios/vt2.jpg";
@@ -109,11 +110,13 @@ const AttributeCardContainer = styled.article`
       font-size: 1.6rem;
     }
 
+    > button,
     > div > button {
       display: flex;
       flex-flow: row nowrap;
       gap: 8px;
       font-size: 1.6rem;
+      width: fit-content;
     }
   }
 `;
@@ -215,6 +218,13 @@ const AttributeCards = () => {
                     Ver Imagens
                   </Button>
                 </CustomDialog>
+
+                {el.title === "Eventos culturais" && (
+                  <Button>
+                    <Image src={Culture} width={32} alt="Eventos culturais" />
+                    Ver Eventos
+                  </Button>
+                )}
               </div>
             </AttributeCardContainer>
           </>

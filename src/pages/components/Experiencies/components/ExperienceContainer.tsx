@@ -26,9 +26,17 @@ const ExperienceContainer = styled.div`
     justify-content: center;
     gap: 20px;
 
+    > article > div > div > button,
     > article > div > button {
+      padding-top: 6px;
+      padding-bottom: 6px;
       border: none;
       font-weight: 500;
+
+      @media (max-width: 600px) {
+        padding-top: 8px;
+        padding-bottom: 8px;
+      }
 
       &:hover {
         filter: brightness(0.9);
@@ -38,15 +46,20 @@ const ExperienceContainer = styled.div`
     > article {
       &:nth-child(3n-2) {
         background-color: #254611;
-        > div > button {
+        > div > div > button {
           background-color: var(--green-600);
+          border-color: transparent;
         }
       }
 
       &:nth-child(3n-1) {
         background-color: #143346;
-        > div > button {
+        > div > div > button {
           background-color: var(--blue-500-default);
+        }
+
+        > div > button {
+          background-color: var(--green-600);
         }
       }
 
