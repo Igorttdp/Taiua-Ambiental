@@ -16,6 +16,14 @@ const SolidCardContainer = styled.div`
   overflow: hidden;
   position: relative;
 
+  @media (max-width: 991px) {
+    max-width: 54rem;
+  }
+
+  @media (max-width: 600px) {
+    max-width: 38.6rem;
+  }
+
   > h3 {
     font-weight: bold;
     font-size: 2rem;
@@ -35,11 +43,11 @@ const SolidCardContainer = styled.div`
 
     &:first-of-type {
       left: 10px;
-      bottom: -60px;
+      bottom: -100px;
     }
 
     &:last-child {
-        top: -20px;
+      top: -20px;
       right: 10px;
       transform: scale(-1) rotate(-15deg);
     }
@@ -51,13 +59,17 @@ const fira = Fira_Sans({
   weight: ["400"],
 });
 
-const SolidCard = () => {
+interface SolidCardProps {
+  title: string;
+  subtitle: string;
+}
+
+const SolidCard = ({ title, subtitle }: SolidCardProps) => {
   return (
     <SolidCardContainer>
-      <h3>Sustentabilidade</h3>
+      <h3>{title}</h3>
       <p className={fira.className}>
-        Temos o cuidado de oferecer uma hospedagem que proporcione uma maior
-        conscientização sobre a importância do bioma Cerrado.
+        {subtitle}
       </p>
 
       <div className="line"></div>

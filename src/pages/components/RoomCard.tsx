@@ -17,9 +17,7 @@ import CustomDialog from "./CustomDialog";
 
 // Área de Camping
 import ac1 from "../../assets/rooms/camping/1.jpg";
-import ac2 from "../../assets/rooms/camping/2.jpg";
 import ac3 from "../../assets/rooms/camping/3.jpg";
-import ac4 from "../../assets/rooms/camping/4.jpg";
 import ac5 from "../../assets/rooms/camping/5.jpg";
 import ac6 from "../../assets/rooms/camping/6.jpg";
 import ac7 from "../../assets/rooms/camping/7.jpg";
@@ -31,7 +29,6 @@ import ac12 from "../../assets/rooms/camping/12.jpg";
 import ac13 from "../../assets/rooms/camping/13.jpg";
 import ac14 from "../../assets/rooms/camping/14.jpg";
 import ac15 from "../../assets/rooms/camping/15.jpg";
-import ac16 from "../../assets/rooms/camping/16.jpg";
 import ac17 from "../../assets/rooms/camping/17.jpg";
 import ac18 from "../../assets/rooms/camping/18.jpg";
 
@@ -220,9 +217,7 @@ const RoomCard = () => {
         images: [
           areaCamping,
           ac1,
-          ac2,
           ac3,
-          ac4,
           ac5,
           ac6,
           ac7,
@@ -234,7 +229,6 @@ const RoomCard = () => {
           ac13,
           ac14,
           ac15,
-          ac16,
           ac17,
           ac18,
         ],

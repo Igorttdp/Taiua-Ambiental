@@ -1,12 +1,20 @@
+// Next
 import Image from "next/image";
-import styled from "styled-components";
-import Check from "../../assets/check.svg";
-import ImageBtn from "../../../../assets/imagebtn.svg";
 import { Fira_Sans, Josefin_Sans } from "next/font/google";
+
+// Interfaces
 import AttributeData from "@/interfaces/AttributesData";
+
+// Third Part Libraries
+import styled from "styled-components";
+
+// Components
+import Button from "../../Button";
+import SolidCard from "./SolidCard";
 import CustomDialog from "../../CustomDialog";
 
 // Images
+import ImageBtn from "../../../../assets/imagebtn.svg";
 
 import vt1 from "../../../../assets/rooms/vestiarios/vt1.jpg";
 import vt2 from "../../../../assets/rooms/vestiarios/vt2.jpg";
@@ -14,9 +22,7 @@ import vt3 from "../../../../assets/rooms/vestiarios/vt3.jpg";
 import vt4 from "../../../../assets/rooms/vestiarios/vt4.jpg";
 
 import ac1 from "../../../../assets/rooms/camping/1.jpg";
-import ac2 from "../../../../assets/rooms/camping/2.jpg";
 import ac3 from "../../../../assets/rooms/camping/3.jpg";
-import ac4 from "../../../../assets/rooms/camping/4.jpg";
 import ac5 from "../../../../assets/rooms/camping/5.jpg";
 import ac6 from "../../../../assets/rooms/camping/6.jpg";
 import ac7 from "../../../../assets/rooms/camping/7.jpg";
@@ -28,11 +34,18 @@ import ac12 from "../../../../assets/rooms/camping/12.jpg";
 import ac13 from "../../../../assets/rooms/camping/13.jpg";
 import ac14 from "../../../../assets/rooms/camping/14.jpg";
 import ac15 from "../../../../assets/rooms/camping/15.jpg";
-import ac16 from "../../../../assets/rooms/camping/16.jpg";
 import ac17 from "../../../../assets/rooms/camping/17.jpg";
 import ac18 from "../../../../assets/rooms/camping/18.jpg";
-import Button from "../../Button";
-import SolidCard from "./SolidCard";
+
+import e1 from "../../../../assets/Experiences/eventos/e1.png";
+import e2 from "../../../../assets/Experiences/eventos/e2.png";
+import e3 from "../../../../assets/Experiences/eventos/e3.png";
+
+import c1 from "../../../../assets/Experiences/cozinha/c1.jpg";
+import c2 from "../../../../assets/Experiences/cozinha/c2.jpg";
+import c3 from "../../../../assets/Experiences/cozinha/c3.jpg";
+import c4 from "../../../../assets/Experiences/cozinha/c4.jpg";
+import c5 from "../../../../assets/Experiences/cozinha/c5.jpg";
 
 const josefin = Josefin_Sans({
   subsets: ["latin"],
@@ -96,7 +109,7 @@ const AttributeCardContainer = styled.article`
       font-size: 1.6rem;
     }
 
-    > button {
+    > div > button {
       display: flex;
       flex-flow: row nowrap;
       gap: 8px;
@@ -115,9 +128,7 @@ const AttributeCards = () => {
         title: "Área de Convivência",
         images: [
           ac1,
-          ac2,
           ac3,
-          ac4,
           ac5,
           ac6,
           ac7,
@@ -129,7 +140,6 @@ const AttributeCards = () => {
           ac13,
           ac14,
           ac15,
-          ac16,
           ac17,
           ac18,
         ]
@@ -142,6 +152,13 @@ const AttributeCards = () => {
       title: "Eventos culturais",
       subtitle:
         "Recebemos artistas voluntários, que fazem apresentações para hóspedes e moradores da Vila.",
+      album: {
+        title: "Eventos Culturais",
+        images: [e1, e2, e3]
+          .map((el) => ({ ...el, sort: Math.random() }))
+          .sort((a, b) => a.sort - b.sort)
+          .map((el) => el),
+      },
     },
     {
       title: "Vestiários",
@@ -158,6 +175,13 @@ const AttributeCards = () => {
       title: "Cozinha equipada",
       subtitle:
         "Oferecemos uma cozinha completa e confortável com todos os equipamentos e utensílios para melhor atendê-los.",
+      album: {
+        title: "Cozinha Equipada",
+        images: [c1, c2, c3, c4, c5]
+          .map((el) => ({ ...el, sort: Math.random() }))
+          .sort((a, b) => a.sort - b.sort)
+          .map((el) => el),
+      },
     },
     {
       title: "Sustentabilidade",
@@ -171,23 +195,49 @@ const AttributeCards = () => {
     },
   ];
 
+  const renderAttributeCards = () =>
+    AttributesData.map((el, i) => {
+      if (el.album) {
+        return (
+          <>
+            <AttributeCardContainer key={"attr" + el.title + i}>
+              <Image src={el.album.images[0]} placeholder="blur" alt="Imagem" />
+              <div>
+                <h3 className={josefin.className}>{el.title}</h3>
+                <p className={fira.className}>{el.subtitle}</p>
+                <CustomDialog
+                  albumImages={el.album.images}
+                  title={el.album.title}
+                  subtitle={el.subtitle}
+                >
+                  <Button>
+                    <Image src={ImageBtn} alt="Ícone de Imagem" />
+                    Ver Imagens
+                  </Button>
+                </CustomDialog>
+              </div>
+            </AttributeCardContainer>
+          </>
+        );
+      }
+    });
+
+  const renderSolidCards = () =>
+    AttributesData.map((el, i) => {
+      if (!el.album)
+        return (
+          <SolidCard
+            key={"solidCard" + el.title + i}
+            title={el.title}
+            subtitle={el.subtitle}
+          />
+        );
+    });
+
   return (
     <>
-      <AttributeCardContainer>
-        <Image src={ac1} alt="x" />
-        <div>
-          <h3 className={josefin.className}>Área de Convivencia</h3>
-          <p className={fira.className}>
-            Uma área ampla e aconchegante. Com camas, pufes, redes, Longe e
-            muito mais.
-          </p>
-          <Button>
-            <Image src={ImageBtn} alt="Ícone de Imagem" />
-            Ver Imagens
-          </Button>
-        </div>
-      </AttributeCardContainer>
-      <SolidCard />
+      {renderAttributeCards()}
+      {renderSolidCards()}
     </>
   );
 };
