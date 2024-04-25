@@ -170,6 +170,16 @@ const RoomCardContainer = styled.article`
     }
   }
 
+  &:nth-of-type(odd) > div {
+    background-color: #143346;
+    border-radius: 0 0 12px 12px;
+  }
+
+  &:nth-of-type(even) > div {
+    background-color: #254611;
+    border-radius: 0 0 12px 12px;
+  }
+
   > div {
     height: inherit;
 
@@ -191,15 +201,12 @@ const RoomCardContainer = styled.article`
 
     h3 {
       font-size: 2rem;
+      color: #ffffff;
     }
 
     span {
       font-size: 1.4rem;
-      color: #686868;
-
-      @media (prefers-color-scheme: dark) {
-        color: #cecece;
-      }
+      color: #cecece;
     }
 
     > div {

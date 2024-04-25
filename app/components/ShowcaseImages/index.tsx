@@ -4,7 +4,7 @@
 import p1 from "../../assets/presentation/p1.jpg"
 import p2 from "../../assets/presentation/p2.jpg"
 import p3 from "../../assets/presentation/p3.jpg"
-import p4 from "../../assets/presentation/p4.png"
+import p4 from "../../assets/presentation/p4.jpg"
 import p5 from "../../assets/presentation/p5.jpg"
 
 import Carousel from "../Carousel";
