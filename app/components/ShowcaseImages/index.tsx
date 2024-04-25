@@ -1,11 +1,11 @@
 "use client"
 
 // Suíte Jatobá
-import p1 from "../../assets/presentation/p1.jpg"
+import p1 from "../../assets/presentation/p1.webp"
 import p2 from "../../assets/presentation/p2.jpg"
-import p3 from "../../assets/presentation/p3.jpg"
-import p4 from "../../assets/presentation/p4.jpg"
-import p5 from "../../assets/presentation/p5.jpg"
+import p3 from "../../assets/presentation/p3.webp"
+import p4 from "../../assets/presentation/p4.webp"
+import p5 from "../../assets/presentation/p5.webp"
 
 import Carousel from "../Carousel";
 
