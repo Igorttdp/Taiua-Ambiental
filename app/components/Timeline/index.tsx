@@ -134,7 +134,7 @@ const TimelineContainer = styled.article<TimelineContainerProps>`
 
     > p {
       font-size: 1.4rem;
-      text-align: justify;
+      text-align: left;
     }
   }
 
