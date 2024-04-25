@@ -10,6 +10,10 @@ const Presentation = styled.div`
   min-height: 100vh;
   background: linear-gradient(180deg, #47702f 0%, #ffffff 30%);
 
+  @media (prefers-color-scheme: dark) {
+    background: linear-gradient(180deg, #47702f 0%, #1c2428 30%);
+  }
+
   > div {
     display: flex;
     flex-flow: column nowrap;

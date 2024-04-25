@@ -1,4 +1,4 @@
-"use client"
+"use client";
 
 import styled from "styled-components";
 
@@ -28,6 +28,10 @@ const VirtuesContainer = styled.div`
 
     &:nth-child(1) {
       align-self: flex-start;
+
+      @media (prefers-color-scheme: dark) {
+        filter: brightness(1.1);
+      }
     }
   }
 

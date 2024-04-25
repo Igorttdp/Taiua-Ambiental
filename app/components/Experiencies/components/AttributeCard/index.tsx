@@ -1,7 +1,7 @@
-"use client"
+"use client";
 
 // Next
-import Image from "next/image";
+import Image, { StaticImageData } from "next/image";
 import { Fira_Sans, Josefin_Sans } from "next/font/google";
 
 // Interfaces

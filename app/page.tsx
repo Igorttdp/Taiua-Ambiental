@@ -137,7 +137,11 @@ export default function Home() {
             </div>
           </Presentation>
         </Container>
-        <Container id="Accommodations" $background="#FFFFFF">
+        <Container
+          id="Accommodations"
+          $background="#FFFFFF"
+          $darkMode={{ $background: "#1c2428" }}
+        >
           <Accommodations>
             <h2>Acomodações</h2>
             <div>
@@ -147,7 +151,10 @@ export default function Home() {
         </Container>
         <Container
           id="Attributes"
-          $background="linear-gradient(180deg, #fff 0%, #cce6f5 100%)"
+          $background="linear-gradient(180deg, #FFFFFF 0%, #cce6f5 100%)"
+          $darkMode={{
+            $background: "linear-gradient(180deg, #1c2428 0%, #448ab9 100%)",
+          }}
           style={{ minHeight: "fit-content" }}
         >
           <Experiences />
@@ -155,6 +162,9 @@ export default function Home() {
         <Container
           id="Virtues"
           $background="linear-gradient(180deg, #cce6f5 0%, #4da5dd 100%)"
+          $darkMode={{
+            $background: "linear-gradient(180deg, #448ab9 0%, #4da5dd 100%)",
+          }}
           style={{ minHeight: "fit-content" }}
         >
           <VirtuesContainer>

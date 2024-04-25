@@ -1,4 +1,4 @@
-"use client"
+"use client";
 
 import styled from "styled-components";
 
@@ -11,7 +11,7 @@ const Accommodations = styled.div`
   @media (max-width: 375px) {
     padding: 0 2.4rem 3.6rem;
   }
-  
+
   @media (max-width: 320px) {
     padding: 0 2rem 3.6rem;
   }

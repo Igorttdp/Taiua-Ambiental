@@ -49,6 +49,19 @@ const Button = styled.button<IButtonProps>`
   );
   font-size: 20px;
 
+  @media (prefers-color-scheme: dark) {
+    color: var(
+      ${({ $variant }) =>
+        $variant && [1, 4].includes($variant)
+          ? CssVars.WHITE
+          : $variant && $variant === ButtonVariant.OUTLINE_BLUE_TEXT
+          ? CssVars.BLUE_200
+          : $variant && $variant === ButtonVariant.OUTLINE_GREEN_TEXT
+          ? CssVars.GREEN_200
+          : CssVars.WHITE}
+    );
+  }
+
   &:hover {
     background: var(
       ${({ $variant }) =>
