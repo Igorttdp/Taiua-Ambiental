@@ -44,7 +44,8 @@ import TaiuaTimeline from "./components/Timeline";
 
 // Enum
 import { ButtonVariant } from "./components/GlobalStyles/enums";
-import { Metadata } from "next";
+
+// Utils
 import { CallWppMessage, redirectToLink } from "./utils";
 
 const josefin = Josefin_Sans({
@@ -74,8 +75,8 @@ export default function Home() {
               <a href="#" draggable={false}>
                 <Image
                   src={Logo}
-                  width={309}
-                  height={309}
+                  width={600}
+                  height={800}
                   alt="Taiuá Ambiental"
                   priority
                   style={{ borderRadius: "100%" }}

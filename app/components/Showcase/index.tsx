@@ -53,12 +53,13 @@ const Showcase = styled.div<IShowcaseProps>`
 
     a > img {
       position: relative;
-      max-width: 30.9rem;
-      max-height: 30.9rem;
+      max-width: 37rem;
+      width: auto;
+      height: auto;
       z-index: 3;
 
       @media (max-width: 840px) {
-        width: 75%;
+        width: 70%;
         height: fit-content;
       }
     }
