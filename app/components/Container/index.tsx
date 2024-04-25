@@ -26,12 +26,12 @@ const Container = styled.section<IContainerProps>`
   @media (prefers-color-scheme: dark) {
     color: #fff;
     background: ${({ $darkMode, $background }) =>
-      $darkMode && $darkMode.$background ? $darkMode.$background : $background};
+      $darkMode && $darkMode.$background ? $darkMode.$background : $background} !important;
   }
 
   @media (max-width: 840px) {
-    background: ${({ $background, $darkMode }) => {
-      if ($background && !$darkMode) {
+    background: ${({ $background }) => {
+      if ($background) {
         let str = "";
         str = $background.replace("8.85%", "0%");
         str = str.replace("27.08%", "20%");

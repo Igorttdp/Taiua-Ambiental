@@ -179,6 +179,10 @@ const RoomCardContainer = styled.article`
     justify-content: space-between;
     padding: 2rem 0;
 
+    @supports (max-height: intrinsic) {
+      max-height: intrinsic;
+    }
+
     @media (min-width: 600px) and (max-width: 800px) {
       width: 45%;
       justify-content: center;
