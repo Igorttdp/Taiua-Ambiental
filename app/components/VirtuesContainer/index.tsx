@@ -59,19 +59,19 @@ const VirtuesContainer = styled.div`
         font-size: clamp(3rem, 10vw, 4.8rem);
       }
 
-      &:nth-of-type(2) > h3 {
+      &:nth-of-type(2) > h3, &:nth-of-type(2) > p {
         width: 100%;
         text-align: right;
       }
 
-      &:nth-of-type(3) > h3 {
+      &:nth-of-type(3) > h3,&:nth-of-type(3) > p {
         width: 100%;
         text-align: center;
       }
 
       > p {
         font-size: clamp(2rem, 4vw, 3.2rem);
-        text-align: justify;
+        text-align: left;
       }
     }
   }

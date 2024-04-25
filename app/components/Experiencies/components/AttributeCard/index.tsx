@@ -108,7 +108,7 @@ const AttributeCardContainer = styled.article`
     }
 
     > p {
-      text-align: justify;
+      text-align: left;
       font-weight: 400;
       font-size: 1.6rem;
     }
@@ -129,7 +129,7 @@ const AttributeCards = () => {
     {
       title: "Área de Convivência",
       subtitle:
-        "Uma área ampla e aconchegante.Com camas, pufes, redes, Longe e muito mais.",
+        "Uma área ampla e aconchegante. Com camas, pufes, redes, Longe e muito mais.",
       album: {
         title: "Área de Convivência",
         images: [
