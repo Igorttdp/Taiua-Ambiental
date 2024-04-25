@@ -18,6 +18,7 @@ const CarouselThumbContainer = styled.div<CarouselThumbContainerProps>`
 
   position: absolute;
   bottom: 1.6rem;
+  z-index: 9;
 
   display: none;
   flex-flow: row nowrap;
@@ -83,6 +84,7 @@ const CarouselThumb = ({
             src={el.thumb}
             alt="Thumbnail"
             className={el.thumbIndex === activeIndex ? "thumbActive" : ""}
+            priority
           />
         ))}
     </CarouselThumbContainer>

@@ -131,8 +131,18 @@ const RoomCardContainer = styled.article`
   border: 1px solid var(--black);
   border-radius: 1.2rem;
 
+  @media (prefers-color-scheme: dark) {
+    border: 1px solid var(--blue-500-default-dark);
+  }
+
+  &:nth-of-type(even) {
+    @media (prefers-color-scheme: dark) {
+      border: 1px solid var(--green-600);
+    }
+  }
+
   &:hover {
-    box-shadow: 0px 0px 20px -1px #35b0fc;
+    box-shadow: 0px 0px 20px 2px #35b0fc;
   }
 
   @media (min-width: 600px) and (max-width: 800px) {
@@ -182,6 +192,10 @@ const RoomCardContainer = styled.article`
     span {
       font-size: 1.4rem;
       color: #686868;
+
+      @media (prefers-color-scheme: dark) {
+        color: #cecece;
+      }
     }
 
     > div {

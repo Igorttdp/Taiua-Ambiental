@@ -34,6 +34,10 @@ const NavbarContainer = styled.nav`
   align-items: center;
   justify-content: space-between;
 
+  @media (prefers-color-scheme: dark) {
+    border-bottom: 2px solid var(--green-600);
+  }
+  
   @media (min-width: 893px) {
     > div#menu__container {
       display: none;
