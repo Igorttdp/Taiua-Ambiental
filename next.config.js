@@ -7,6 +7,9 @@ const nextConfig = {
   compiler: {
     styledComponents: true
   },
+  experimental: {
+    optimizePackageImports: ["@coreui/react", "@coreui/coreui", "@mui/lab", "styled-components", "uuid"]
+  }
 };
 
 module.exports = nextConfig;

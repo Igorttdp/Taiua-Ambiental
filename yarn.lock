@@ -5845,16 +5845,6 @@ __metadata:
   languageName: node
   linkType: hard
 
-"react-lite-youtube-embed@npm:^2.3.52":
-  version: 2.4.0
-  resolution: "react-lite-youtube-embed@npm:2.4.0"
-  peerDependencies:
-    react: ">=18.2.0"
-    react-dom: ">=18.2.0"
-  checksum: fbed710f22926f8dabefcbc7dcaf817bf9281c07c612eebcd52c36694084ba154eb3dccb5de6049f84b905a3a850b1a6dde90396da353ac5cc2231eea18ff1f7
-  languageName: node
-  linkType: hard
-
 "react-remove-scroll-bar@npm:^2.3.3":
   version: 2.3.6
   resolution: "react-remove-scroll-bar@npm:2.3.6"
@@ -6662,7 +6652,6 @@ __metadata:
     next: latest
     react: latest
     react-dom: latest
-    react-lite-youtube-embed: ^2.3.52
     sharp: ^0.32.4
     styled-components: ^6.0.7
     stylis: ^4.0.0

@@ -29,7 +29,6 @@
     "next": "latest",
     "react": "latest",
     "react-dom": "latest",
-    "react-lite-youtube-embed": "^2.3.52",
     "sharp": "^0.32.4",
     "styled-components": "^6.0.7",
     "stylis": "^4.0.0",
