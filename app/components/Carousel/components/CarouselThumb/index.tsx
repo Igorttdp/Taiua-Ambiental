@@ -23,6 +23,7 @@ const CarouselThumbContainer = styled.div<CarouselThumbContainerProps>`
   flex-flow: row nowrap;
   justify-content: center;
   gap: 8px;
+  z-index: 9;
 
   &.activeThumb {
     display: flex;
