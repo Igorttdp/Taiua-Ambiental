@@ -30,8 +30,8 @@ const Container = styled.section<IContainerProps>`
   }
 
   @media (max-width: 840px) {
-    background: ${({ $background }) => {
-      if ($background) {
+    background: ${({ $background, $darkMode }) => {
+      if ($background && !$darkMode) {
         let str = "";
         str = $background.replace("8.85%", "0%");
         str = str.replace("27.08%", "20%");
