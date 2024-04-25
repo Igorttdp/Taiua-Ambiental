@@ -135,7 +135,7 @@ const Navbar = () => {
         <Image
           src={Logo}
           width={50}
-          height={50}
+          height={66.66}
           alt="Taiuá Ambiental"
           placeholder="blur"
           style={{ borderRadius: "100%" }}

@@ -289,8 +289,8 @@ export default function Home() {
           <Image
             id="ft-logo"
             src={Logo}
-            width={190}
-            height={190}
+            width={200}
+            height={267}
             alt="Taiuá Ambiental"
             placeholder="blur"
             style={{ borderRadius: "100%" }}
