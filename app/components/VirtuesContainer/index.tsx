@@ -39,11 +39,11 @@ const VirtuesContainer = styled.div`
     > hr {
       margin: 5.8rem 0;
       border-top: 3px solid;
-      border-color: #5e943e;
+      border-color: #90f157;
       opacity: unset;
 
       &:last-of-type {
-        border-color: #2a8ecc;
+        border-color: #17618f;
       }
     }
 
