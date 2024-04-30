@@ -49,6 +49,7 @@ const Button = styled.button<IButtonProps>`
   ); */
   color: #FFFFFF;
   font-size: 20px;
+  font-weight: 500;
 
   &:hover {
     background: var(
