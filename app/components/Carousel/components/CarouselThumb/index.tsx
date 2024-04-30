@@ -18,7 +18,7 @@ const CarouselThumbContainer = styled.div<CarouselThumbContainerProps>`
 
   position: absolute;
   bottom: 1.6rem;
-  z-index: 9;
+  z-index: 8;
 
   display: none;
   flex-flow: row nowrap;
