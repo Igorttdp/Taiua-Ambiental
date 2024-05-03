@@ -183,8 +183,10 @@ export default function Home() {
               <div>
                 <h3>Visão</h3>
                 <p>
-                  Proporcionar uma experiência única e sustentável, unindo os
-                  visitantes à natureza e promovendo a consciência ambiental.
+                  Criar um espaço onde a experiência única e
+                  sustentável que oferece não apenas um visitante à natureza,
+                  mas também inspira a se tornarem defensores ativos da
+                  consciência ambiental.
                 </p>
               </div>
               <hr />

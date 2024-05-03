@@ -1,7 +1,7 @@
 "use client";
 
 // Next
-import Image, { StaticImageData } from "next/image";
+import Image from "next/image";
 import { Fira_Sans, Josefin_Sans } from "next/font/google";
 
 // Interfaces
@@ -47,6 +47,7 @@ import ca2 from "../../../../assets/Experiences/cafe/2.jpeg";
 import ca3 from "../../../../assets/Experiences/cafe/3.jpeg";
 import ca4 from "../../../../assets/Experiences/cafe/4.jpeg";
 import ca5 from "../../../../assets/Experiences/cafe/5.jpeg";
+import { ButtonVariant } from "../../../GlobalStyles/enums";
 
 const josefin = Josefin_Sans({
   subsets: ["latin"],
@@ -91,7 +92,6 @@ const AttributeCardContainer = styled.article`
     display: flex;
     flex-flow: column nowrap;
     justify-content: center;
-    gap: 1.2rem;
     padding: 0 20px;
     color: white;
 
@@ -100,7 +100,6 @@ const AttributeCardContainer = styled.article`
     }
 
     > h3 {
-      font-size: bold;
       font-size: 2rem;
     }
 
@@ -117,6 +116,7 @@ const AttributeCardContainer = styled.article`
       gap: 8px;
       font-size: 1.6rem;
       width: fit-content;
+      margin-bottom: 8px;
     }
   }
 `;
@@ -138,7 +138,7 @@ const AttributeCards = () => {
     {
       title: "Café da manhã",
       subtitle:
-        "Temos parceria com uma cafeteria da Vila. Reserve com antecedência.",
+        "Calango Café é um bistrô dentro do Taiuá Ambiental, aberto das 7:00 às 12:00 para café da manhã. Reservas são aceitas, mas você pode simplesmente aparecer para aproveitar as delícias em um ambiente aconchegante.",
       album: {
         title: "Café da Manhã",
         images: [ca1, ca2, ca3, ca4, ca5]
@@ -187,7 +187,6 @@ const AttributeCards = () => {
       subtitle:
         "Temos o cuidado de oferecer uma hospedagem que proporcione uma maior conscientização sobre a importância do bioma Cerrado.",
     },
-
   ];
 
   const renderAttributeCards = () =>
@@ -217,7 +216,7 @@ const AttributeCards = () => {
               </CustomDialog>
 
               {el.title === "Eventos culturais" && (
-                <Button>
+                <Button $variant={ButtonVariant.GREEN}>
                   <Image src={Culture} width={32} alt="Eventos culturais" />
                   Ver Eventos
                 </Button>
