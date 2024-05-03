@@ -24,6 +24,8 @@ import ac3 from "../../assets/rooms/camping/3.jpg";
 import ac4 from "../../assets/rooms/camping/4.jpg";
 import ac5 from "../../assets/rooms/camping/5.jpg";
 import ac6 from "../../assets/rooms/camping/6.jpg";
+import ac7 from "../../assets/rooms/camping/7.jpeg";
+import ac8 from "../../assets/rooms/camping/8.jpeg";
 
 // Barraca Equipada
 import be1 from "../../assets/rooms/barraca_equipada/1.jpg";
@@ -165,7 +167,7 @@ const RoomCardContainer = styled.article`
   }
 
   &:nth-of-type(even) > div {
-    background-color: #254611;
+    background-color: #1b330c;
     border-radius: 0 0 1.2rem 1.2rem;
 
   }
@@ -235,7 +237,7 @@ const RoomCard = () => {
       idQuarto: 0,
       album: {
         title: "Área de Camping",
-        images: [areaCamping, ac1, ac2, ac3, ac4, ac5, ac6],
+        images: [areaCamping, ac1, ac2, ac3, ac4, ac5, ac6, ac7, ac8],
       },
     },
     {
