@@ -358,7 +358,7 @@ const RoomCard = () => {
 
   const redirectToLink = (idQuarto: number) => {
     window.open(
-      `https://taiuaambiental.motordereservas.com.br/novareserva?idquartoCategoria=${idQuarto}`
+      `https://taiuaambiental.motordereservas.com.br/novareserva`
     );
   };
 
