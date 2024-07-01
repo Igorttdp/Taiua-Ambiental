@@ -1,10 +1,6 @@
 export const redirectToLink = (idQuarto?: number) => {
   let url = "https://taiuaambiental.motordereservas.com.br/novareserva";
 
-  if (idQuarto) {
-    url += `?idquartoCategoria=${idQuarto}`;
-  }
-
   window.open(url);
 };
 
