@@ -19,20 +19,13 @@ import CustomDialog from "../CustomDialog";
 
 // Área de Camping
 import ac1 from "../../assets/rooms/camping/1.jpg";
+import ac2 from "../../assets/rooms/camping/2.jpg";
 import ac3 from "../../assets/rooms/camping/3.jpg";
+import ac4 from "../../assets/rooms/camping/4.jpg";
 import ac5 from "../../assets/rooms/camping/5.jpg";
 import ac6 from "../../assets/rooms/camping/6.jpg";
-import ac7 from "../../assets/rooms/camping/7.jpg";
-import ac8 from "../../assets/rooms/camping/8.jpg";
-import ac9 from "../../assets/rooms/camping/9.jpg";
-import ac10 from "../../assets/rooms/camping/10.jpg";
-import ac11 from "../../assets/rooms/camping/11.jpg";
-import ac12 from "../../assets/rooms/camping/12.jpg";
-import ac13 from "../../assets/rooms/camping/13.jpg";
-import ac14 from "../../assets/rooms/camping/14.jpg";
-import ac15 from "../../assets/rooms/camping/15.jpg";
-import ac17 from "../../assets/rooms/camping/17.jpg";
-import ac18 from "../../assets/rooms/camping/18.jpg";
+import ac7 from "../../assets/rooms/camping/7.jpeg";
+import ac8 from "../../assets/rooms/camping/8.jpeg";
 
 // Barraca Equipada
 import be1 from "../../assets/rooms/barraca_equipada/1.jpg";
@@ -42,7 +35,7 @@ import be4 from "../../assets/rooms/barraca_equipada/4.jpg";
 import be5 from "../../assets/rooms/barraca_equipada/5.jpg";
 import be6 from "../../assets/rooms/barraca_equipada/6.jpg";
 import be7 from "../../assets/rooms/barraca_equipada/7.jpg";
-import be8 from "../../assets/rooms/barraca_equipada/8.jpg";
+import be8 from "../../assets/rooms/barraca_equipada/8.jpeg";
 
 // Suíte Jatobá
 import jt1 from "../../assets/rooms/jatoba/1.jpg";
@@ -131,8 +124,18 @@ const RoomCardContainer = styled.article`
   border: 1px solid var(--black);
   border-radius: 1.2rem;
 
+  @media (prefers-color-scheme: dark) {
+    border: 1px solid var(--blue-500-default-dark);
+  }
+
+  &:nth-of-type(even) {
+    @media (prefers-color-scheme: dark) {
+      border: 1px solid var(--green-600);
+    }
+  }
+
   &:hover {
-    box-shadow: 0px 0px 20px -1px #35b0fc;
+    box-shadow: 0px 0px 20px 2px #35b0fc;
   }
 
   @media (min-width: 600px) and (max-width: 800px) {
@@ -148,8 +151,6 @@ const RoomCardContainer = styled.article`
   transition: all 0.3s;
 
   > img {
-    width: "auto";
-    height: "auto";
     border-radius: 1.2rem 1.2rem 0 0;
     object-fit: cover;
 
@@ -158,6 +159,17 @@ const RoomCardContainer = styled.article`
       height: auto;
       border-radius: 1.2rem 0 0 1.2rem;
     }
+  }
+
+  &:nth-of-type(odd) > div {
+    background-color: #143346;
+    border-radius: 0 0 1.2rem 1.2rem;
+  }
+
+  &:nth-of-type(even) > div {
+    background-color: #1b330c;
+    border-radius: 0 0 1.2rem 1.2rem;
+
   }
 
   > div {
@@ -169,19 +181,26 @@ const RoomCardContainer = styled.article`
     justify-content: space-between;
     padding: 2rem 0;
 
+    @supports (max-height: intrinsic) {
+      max-height: intrinsic;
+    }
+
     @media (min-width: 600px) and (max-width: 800px) {
+      height: auto;
       width: 45%;
       justify-content: center;
       gap: 2rem;
+      border-radius: 0 1.2rem 1.2rem 0 !important;
     }
 
     h3 {
       font-size: 2rem;
+      color: #ffffff;
     }
 
     span {
       font-size: 1.4rem;
-      color: #686868;
+      color: #cecece;
     }
 
     > div {
@@ -218,24 +237,7 @@ const RoomCard = () => {
       idQuarto: 0,
       album: {
         title: "Área de Camping",
-        images: [
-          areaCamping,
-          ac1,
-          ac3,
-          ac5,
-          ac6,
-          ac7,
-          ac8,
-          ac9,
-          ac10,
-          ac11,
-          ac12,
-          ac13,
-          ac14,
-          ac15,
-          ac17,
-          ac18,
-        ],
+        images: [areaCamping, ac1, ac2, ac3, ac4, ac5, ac6, ac7, ac8],
       },
     },
     {

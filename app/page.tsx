@@ -44,7 +44,8 @@ import TaiuaTimeline from "./components/Timeline";
 
 // Enum
 import { ButtonVariant } from "./components/GlobalStyles/enums";
-import { Metadata } from "next";
+
+// Utils
 import { CallWppMessage, redirectToLink } from "./utils";
 
 const josefin = Josefin_Sans({
@@ -74,8 +75,8 @@ export default function Home() {
               <a href="#" draggable={false}>
                 <Image
                   src={Logo}
-                  width={309}
-                  height={309}
+                  width={600}
+                  height={800}
                   alt="Taiuá Ambiental"
                   priority
                   style={{ borderRadius: "100%" }}
@@ -137,7 +138,11 @@ export default function Home() {
             </div>
           </Presentation>
         </Container>
-        <Container id="Accommodations" $background="#FFFFFF">
+        <Container
+          id="Accommodations"
+          $background="#FFFFFF"
+          $darkMode={{ $background: "#1c2428" }}
+        >
           <Accommodations>
             <h2>Acomodações</h2>
             <div>
@@ -147,7 +152,10 @@ export default function Home() {
         </Container>
         <Container
           id="Attributes"
-          $background="linear-gradient(180deg, #fff 0%, #cce6f5 100%)"
+          $background="linear-gradient(180deg, #FFFFFF 0%, #cce6f5 100%)"
+          $darkMode={{
+            $background: "linear-gradient(180deg, #1c2428 0%, #448ab9 100%)",
+          }}
           style={{ minHeight: "fit-content" }}
         >
           <Experiences />
@@ -155,6 +163,9 @@ export default function Home() {
         <Container
           id="Virtues"
           $background="linear-gradient(180deg, #cce6f5 0%, #4da5dd 100%)"
+          $darkMode={{
+            $background: "linear-gradient(180deg, #448ab9 0%, #4da5dd 100%)",
+          }}
           style={{ minHeight: "fit-content" }}
         >
           <VirtuesContainer>
@@ -172,8 +183,10 @@ export default function Home() {
               <div>
                 <h3>Visão</h3>
                 <p>
-                  Proporcionar uma experiência única e sustentável, unindo os
-                  visitantes à natureza e promovendo a consciência ambiental.
+                  Criar um espaço onde a experiência única e
+                  sustentável que oferece não apenas um visitante à natureza,
+                  mas também inspira a se tornarem defensores ativos da
+                  consciência ambiental.
                 </p>
               </div>
               <hr />
@@ -278,8 +291,8 @@ export default function Home() {
           <Image
             id="ft-logo"
             src={Logo}
-            width={190}
-            height={190}
+            width={200}
+            height={267}
             alt="Taiuá Ambiental"
             placeholder="blur"
             style={{ borderRadius: "100%" }}

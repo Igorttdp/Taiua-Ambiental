@@ -8,6 +8,9 @@ interface IContainerProps {
   $boxShadow?: string;
   $zIndex?: string;
   $minHeight?: string;
+  $darkMode?: {
+    $background?: string;
+  };
 }
 
 const Container = styled.section<IContainerProps>`
@@ -19,6 +22,12 @@ const Container = styled.section<IContainerProps>`
   box-shadow: ${({ $boxShadow }) => $boxShadow ?? "unset"};
   z-index: ${({ $zIndex }) => $zIndex ?? "1"};
   position: relative;
+
+  @media (prefers-color-scheme: dark) {
+    color: #fff;
+    background: ${({ $darkMode, $background }) =>
+      $darkMode && $darkMode.$background ? $darkMode.$background : $background} !important;
+  }
 
   @media (max-width: 840px) {
     background: ${({ $background }) => {

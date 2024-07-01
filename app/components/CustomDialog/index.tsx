@@ -28,6 +28,8 @@ const DialogContainer = styled(Dialog)`
     max-width: 80rem;
     width: 100%;
     border-radius: 2rem;
+    color: #fff;
+    background-color: #1c2428;
 
     @media (max-width: 767.98px) {
       width: unset;
@@ -44,6 +46,15 @@ const DialogContentContainer = styled(DialogContent)`
   gap: 2.6rem;
   padding: 0;
 
+  @media (prefers-color-scheme: dark) {
+    background: linear-gradient(
+      45deg,
+      #1c2428 30%,
+      var(--blue-900) 60%,
+      var(--green-900) 100%
+    );
+  }
+
   > div:first-child {
     position: relative;
     height: fit-content;
@@ -54,6 +65,7 @@ const DialogContentContainer = styled(DialogContent)`
       position: absolute;
       bottom: 2rem;
       color: var(--white);
+      z-index: 9;
 
       > h5 {
         font-size: 2.4rem;
@@ -111,6 +123,10 @@ const DialogActionsContainer = styled(DialogActions)`
     background-position: center;
     background-repeat: no-repeat;
     background-size: contain;
+
+    @media (prefers-color-scheme: dark) {
+      filter: invert(1);
+    }
 
     @media (max-width: 767.98px) {
       transition: all 0s;
@@ -181,7 +197,7 @@ const CustomDialog = ({
             <span>{subtitle}</span>
             <div>
               <Button
-                $variant={ButtonVariant.OUTLINE_BLUE_TEXT}
+                $variant={ButtonVariant.BLUE}
                 onClick={() => redirectToLink(idQuarto)}
               >
                 Reservar

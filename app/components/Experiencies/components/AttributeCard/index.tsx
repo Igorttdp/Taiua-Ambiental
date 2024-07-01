@@ -1,4 +1,4 @@
-"use client"
+"use client";
 
 // Next
 import Image from "next/image";
@@ -26,20 +26,11 @@ import vt3 from "../../../../assets/rooms/vestiarios/vt3.jpg";
 import vt4 from "../../../../assets/rooms/vestiarios/vt4.jpg";
 
 import ac1 from "../../../../assets/rooms/camping/1.jpg";
+import ac2 from "../../../../assets/rooms/camping/2.jpg";
 import ac3 from "../../../../assets/rooms/camping/3.jpg";
+import ac4 from "../../../../assets/rooms/camping/4.jpg";
 import ac5 from "../../../../assets/rooms/camping/5.jpg";
 import ac6 from "../../../../assets/rooms/camping/6.jpg";
-import ac7 from "../../../../assets/rooms/camping/7.jpg";
-import ac8 from "../../../../assets/rooms/camping/8.jpg";
-import ac9 from "../../../../assets/rooms/camping/9.jpg";
-import ac10 from "../../../../assets/rooms/camping/10.jpg";
-import ac11 from "../../../../assets/rooms/camping/11.jpg";
-import ac12 from "../../../../assets/rooms/camping/12.jpg";
-import ac13 from "../../../../assets/rooms/camping/13.jpg";
-import ac14 from "../../../../assets/rooms/camping/14.jpg";
-import ac15 from "../../../../assets/rooms/camping/15.jpg";
-import ac17 from "../../../../assets/rooms/camping/17.jpg";
-import ac18 from "../../../../assets/rooms/camping/18.jpg";
 
 import e1 from "../../../../assets/Experiences/eventos/e1.png";
 import e2 from "../../../../assets/Experiences/eventos/e2.png";
@@ -50,6 +41,13 @@ import c2 from "../../../../assets/Experiences/cozinha/c2.jpg";
 import c3 from "../../../../assets/Experiences/cozinha/c3.jpg";
 import c4 from "../../../../assets/Experiences/cozinha/c4.jpg";
 import c5 from "../../../../assets/Experiences/cozinha/c5.jpg";
+
+import ca1 from "../../../../assets/Experiences/cafe/1.jpeg";
+import ca2 from "../../../../assets/Experiences/cafe/2.jpeg";
+import ca3 from "../../../../assets/Experiences/cafe/3.jpeg";
+import ca4 from "../../../../assets/Experiences/cafe/4.jpeg";
+import ca5 from "../../../../assets/Experiences/cafe/5.jpeg";
+import { ButtonVariant } from "../../../GlobalStyles/enums";
 
 const josefin = Josefin_Sans({
   subsets: ["latin"],
@@ -94,7 +92,6 @@ const AttributeCardContainer = styled.article`
     display: flex;
     flex-flow: column nowrap;
     justify-content: center;
-    gap: 1.2rem;
     padding: 0 20px;
     color: white;
 
@@ -103,12 +100,11 @@ const AttributeCardContainer = styled.article`
     }
 
     > h3 {
-      font-size: bold;
       font-size: 2rem;
     }
 
     > p {
-      text-align: justify;
+      text-align: left;
       font-weight: 400;
       font-size: 1.6rem;
     }
@@ -120,6 +116,7 @@ const AttributeCardContainer = styled.article`
       gap: 8px;
       font-size: 1.6rem;
       width: fit-content;
+      margin-bottom: 8px;
     }
   }
 `;
@@ -129,26 +126,22 @@ const AttributeCards = () => {
     {
       title: "Área de Convivência",
       subtitle:
-        "Uma área ampla e aconchegante.Com camas, pufes, redes, Longe e muito mais.",
+        "Uma área ampla e aconchegante. Com camas, pufes, redes, Longe e muito mais.",
       album: {
         title: "Área de Convivência",
-        images: [
-          ac1,
-          ac3,
-          ac5,
-          ac6,
-          ac7,
-          ac8,
-          ac9,
-          ac10,
-          ac11,
-          ac12,
-          ac13,
-          ac14,
-          ac15,
-          ac17,
-          ac18,
-        ]
+        images: [ac1, ac2, ac3, ac4, ac5, ac6]
+          .map((el) => ({ ...el, sort: Math.random() }))
+          .sort((a, b) => a.sort - b.sort)
+          .map((el) => el),
+      },
+    },
+    {
+      title: "Café da manhã",
+      subtitle:
+        "Calango Café é um bistrô dentro do Taiuá Ambiental, aberto das 7:00 às 12:00 para café da manhã. Reservas são aceitas, mas você pode simplesmente aparecer para aproveitar as delícias em um ambiente aconchegante.",
+      album: {
+        title: "Café da Manhã",
+        images: [ca1, ca2, ca3, ca4, ca5]
           .map((el) => ({ ...el, sort: Math.random() }))
           .sort((a, b) => a.sort - b.sort)
           .map((el) => el),
@@ -167,17 +160,6 @@ const AttributeCards = () => {
       },
     },
     {
-      title: "Vestiários",
-      subtitle: "Surpreenda-se com nossa limpeza e organização.",
-      album: {
-        title: "Vestiários",
-        images: [vt1, vt2, vt3, vt4]
-          .map((el) => ({ ...el, sort: Math.random() }))
-          .sort((a, b) => a.sort - b.sort)
-          .map((el) => el),
-      },
-    },
-    {
       title: "Cozinha equipada",
       subtitle:
         "Oferecemos uma cozinha completa e confortável com todos os equipamentos e utensílios para melhor atendê-los.",
@@ -190,14 +172,20 @@ const AttributeCards = () => {
       },
     },
     {
+      title: "Vestiários",
+      subtitle: "Surpreenda-se com nossa limpeza e organização.",
+      album: {
+        title: "Vestiários",
+        images: [vt1, vt2, vt3, vt4]
+          .map((el) => ({ ...el, sort: Math.random() }))
+          .sort((a, b) => a.sort - b.sort)
+          .map((el) => el),
+      },
+    },
+    {
       title: "Sustentabilidade",
       subtitle:
         "Temos o cuidado de oferecer uma hospedagem que proporcione uma maior conscientização sobre a importância do bioma Cerrado.",
-    },
-    {
-      title: "Café da manhã",
-      subtitle:
-        "Temos parceria com uma cafeteria da Vila. Reserve com antecedência.",
     },
   ];
 
@@ -228,7 +216,7 @@ const AttributeCards = () => {
               </CustomDialog>
 
               {el.title === "Eventos culturais" && (
-                <Button>
+                <Button $variant={ButtonVariant.GREEN}>
                   <Image src={Culture} width={32} alt="Eventos culturais" />
                   Ver Eventos
                 </Button>

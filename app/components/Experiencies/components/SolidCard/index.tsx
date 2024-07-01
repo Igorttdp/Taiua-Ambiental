@@ -18,6 +18,10 @@ const SolidCardContainer = styled.div`
   overflow: hidden;
   position: relative;
 
+  @media (prefers-color-scheme: dark) {
+    color: #000;
+  }
+
   @media (max-width: 991px) {
     max-width: 54rem;
   }

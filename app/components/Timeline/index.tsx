@@ -47,6 +47,10 @@ const TimelineContainer = styled.article<TimelineContainerProps>`
       > span {
         &:first-of-type {
           color: var(--blue-900);
+
+          @media (prefers-color-scheme: dark) {
+            color: var(--blue-200);
+          }
         }
       }
     }
@@ -90,11 +94,19 @@ const TimelineContainer = styled.article<TimelineContainerProps>`
         color: var(--green-900);
         font-size: 1.6rem;
         font-weight: bold;
+
+        @media (prefers-color-scheme: dark) {
+          color: var(--green-600);
+        }
       }
 
       &:nth-child(3) {
         font-size: 1.4rem;
         color: #000000;
+
+        @media (prefers-color-scheme: dark) {
+          color: #fff;
+        }
       }
     }
   }
@@ -110,6 +122,10 @@ const TimelineContainer = styled.article<TimelineContainerProps>`
     border-radius: 10px;
     border-color: var(--blue-500-default);
 
+    @media (prefers-color-scheme: dark) {
+      color: #fff;
+    }
+
     > h2 {
       font-size: 3rem;
       font-weight: 600;
@@ -118,7 +134,7 @@ const TimelineContainer = styled.article<TimelineContainerProps>`
 
     > p {
       font-size: 1.4rem;
-      text-align: justify;
+      text-align: left;
     }
   }
 
@@ -148,6 +164,10 @@ const TimelineContainer = styled.article<TimelineContainerProps>`
   .MuiTimelineDot-root {
     align-items: center;
     justify-content: center;
+
+    @media (prefers-color-scheme: dark) {
+      color: #fff;
+    }
   }
 `;
 

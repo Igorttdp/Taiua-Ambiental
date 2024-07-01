@@ -37,7 +37,7 @@ const Button = styled.button<IButtonProps>`
         ? CssVars.TRANSPARENT
         : CssVars.DEFAULT}
   );
-  color: var(
+  /* color: var(
     ${({ $variant }) =>
       $variant && [1, 4].includes($variant)
         ? CssVars.WHITE
@@ -46,8 +46,10 @@ const Button = styled.button<IButtonProps>`
         : $variant && $variant === ButtonVariant.OUTLINE_GREEN_TEXT
         ? CssVars.GREEN_900
         : CssVars.WHITE}
-  );
+  ); */
+  color: #FFFFFF;
   font-size: 20px;
+  font-weight: 500;
 
   &:hover {
     background: var(

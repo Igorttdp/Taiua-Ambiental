@@ -1,4 +1,4 @@
-"use client"
+"use client";
 
 import styled from "styled-components";
 
@@ -28,6 +28,10 @@ const VirtuesContainer = styled.div`
 
     &:nth-child(1) {
       align-self: flex-start;
+
+      @media (prefers-color-scheme: dark) {
+        filter: brightness(1.1);
+      }
     }
   }
 
@@ -35,11 +39,11 @@ const VirtuesContainer = styled.div`
     > hr {
       margin: 5.8rem 0;
       border-top: 3px solid;
-      border-color: #5e943e;
+      border-color: #90f157;
       opacity: unset;
 
       &:last-of-type {
-        border-color: #2a8ecc;
+        border-color: #17618f;
       }
     }
 
@@ -55,19 +59,19 @@ const VirtuesContainer = styled.div`
         font-size: clamp(3rem, 10vw, 4.8rem);
       }
 
-      &:nth-of-type(2) > h3 {
+      &:nth-of-type(2) > h3, &:nth-of-type(2) > p {
         width: 100%;
         text-align: right;
       }
 
-      &:nth-of-type(3) > h3 {
+      &:nth-of-type(3) > h3,&:nth-of-type(3) > p {
         width: 100%;
         text-align: center;
       }
 
       > p {
         font-size: clamp(2rem, 4vw, 3.2rem);
-        text-align: justify;
+        text-align: left;
       }
     }
   }
