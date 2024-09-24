@@ -1,6 +1,9 @@
 // Next
 import { Metadata } from "next";
 
+// Third Parties
+import { GoogleTagManager } from "@next/third-parties/google";
+
 // Styled-Components
 import StyledComponentsRegistry from "./lib/registry";
 import GlobalStyles from "./components/GlobalStyles";
@@ -137,6 +140,7 @@ export default function RootLayout({
 }) {
   return (
     <html lang="pt-BR">
+      <GoogleTagManager gtmId="GTM-5FX7XJCS" />
       <body suppressHydrationWarning={true} >
         <GlobalStyles />
         <StyledComponentsRegistry>{children}</StyledComponentsRegistry>

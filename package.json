@@ -17,6 +17,7 @@
     "@mui/lab": "^5.0.0-alpha.170",
     "@mui/material": "^5.14.5",
     "@mui/styled-engine-sc": "^5.12.0",
+    "@next/third-parties": "latest",
     "@radix-ui/react-dialog": "^1.0.4",
     "@types/node": "20.4.8",
     "@types/react": "18.2.18",
